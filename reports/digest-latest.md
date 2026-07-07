@@ -1,12 +1,14 @@
 # EMS VOC Radar — digest
 
-*Period: last 7 days, generated 2026-07-07 20:42 UTC*
+*Period: last 7 days, generated 2026-07-07 22:37 UTC*
 
-**39** items collected (+25 vs. prior 7 days): 0 Reddit discussions, 35 trade-press articles, 4 competitor page items.
+**76** items collected (+45 vs. prior 7 days): 0 Reddit discussions, 72 trade-press articles, 4 competitor page items.
 
 ## Mentions by product category
 
-_No mentions this period._
+| | mentions | vs. prior |
+|---|---:|---:|
+| Exit devices & panic hardware | 1 | +1 |
 
 ## Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite)
 
@@ -14,13 +16,17 @@ _No mentions this period._
 
 ## Competitor mentions
 
-_No mentions this period._
+| | mentions | vs. prior |
+|---|---:|---:|
+| Schlage / Allegion | 20 | +11 |
+| dormakaba / RCI / BEST | 15 | +8 |
+| Von Duprin | 1 | +1 |
 
 ## Themes
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Wireless & smart access | 16 | +10 |
+| Wireless & smart access | 17 | +11 |
 | Codes & life safety | 3 | +3 |
 | Installation & troubleshooting | 2 | +1 |
 | Reliability & quality | 1 | +1 |
@@ -33,27 +39,27 @@ _No mentions this period._
   - tags: Wireless & smart access
 - [Zeus Fire and Security Names New CEO; Elkins Shifts to Exec Chairman](https://www.securitysales.com/news/zeus-fire-security-elkins-cox-ceo/619591/) — Security Sales & Integration · 2026-07-07
   - tags: Wireless & smart access
+- [Zacks Research Has Bullish Forecast for Allegion Q1 Earnings - MarketBeat](https://news.google.com/rss/articles/CBMitAFBVV95cUxQSFBlZFRzQlg0ZHNuNW1uQnNvcTFsQ2U5ODlxc1RHOGM3SnFEWVBFSUxZWmk4eGNIQ0VUdGoyZEdEUzZVZEVZTXRMQlBzZDl3dUNiUFdzMV9MNHBUdzg3TWdDT2VXVDFXREhOXzNNSnRqQV9JZExXbWZBNVhhNjNuTTVSaVVvUWNiZ0J3TDVNZ1hiZmw2LXlBeHlrX29CNWR5QTFLTmxmbVZtTTRKaUg0azZ2dFU?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-07
+  - tags: Schlage / Allegion
+- [Dormakaba Holding AG balances security technology and global demand - AD HOC NEWS](https://news.google.com/rss/articles/CBMixAFBVV95cUxOdVdINXluUUJxRUpYa0VFVEdaSWpQeXA5LXFZWkE5eGp5WlZNZ0UzRzBVRDNfTmRlUThLR19LNGNfWGlKekxialRCU2tJVFQyekF5Wl9FY1ZmVHBUVmpRT3NXbmdWSFVibWpJd190Sm42aHNWNTJHMW5PZTBLRmV3cGwyYjNGZDhmbjNVdERfOUVsUE5McU9UdWlESG4wdU9CS0lvRmRwdi0wUHd3NzRPQmduNzBrMTNnZHBydVpoMmQ0RThG?oc=5) — dormakaba news (Google News) · 2026-07-07
+  - tags: dormakaba / RCI / BEST
 - [Minuteman Security & Life Safety Expands Southeast Presence With Acquisition of Performance Link Technologies](https://www.sdmmag.com/articles/105585-minuteman-security-and-life-safety-expands-southeast-presence-with-acquisition-of-performance-link-technologies) — SDM Magazine · 2026-07-07
   - tags: Codes & life safety
+- [Allegion plc focuses on security solutions as investors watch long term strategy - AD HOC NEWS](https://news.google.com/rss/articles/CBMiygFBVV95cUxPcm41YlR0ZDdLU0xmanBvZ0pSbU1YbWloNlM0WXgtNTlRLVM3ZW1INFZGTEQ1ZmlUb2wySFZlSGQtaUl4ZFBZZW1aaHZvNXA5RUtrdkJ6TkpDOHpsdjZncjNkWWZ5d3VuUTJLMU0zNWxXV0M4Wk1uSnQyYzViY1V3SlVBa1NRaGd4d0ZXaUxnc19Xb21Fa1hVTHBnLXhCUGY3bnNwejhZSXpwY1hwMXVPSnZDZS1LZHBTdEFKWTk1X0d4cUM0aHlKS1Jn?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-07
+  - tags: Schlage / Allegion
+- [Allegion's quarterly earnings preview: What you need to know - MSN](https://news.google.com/rss/articles/CBMiswFBVV95cUxNejNjN29nTHVuUmt3ejNlZDNDbFFuSjhNVmo0WjhaVXdFN0ZwcWxQT2FhZ25HQXpLWnhoSDBMZUluZnRPTUhHV1ViMldrcVhJTTFJS1hlVEkwY2twWExKTElEYWZ0WUJMcHpuYS05dkRYMTRtbGRHWDBZMGZVZ2pjbWpOTXVaVHE4ZEstcGRKY18yXzFBWElHb3NvejQ2TVROT2dlTDVNWElKX3BZNmZvRXRROA?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-07
+  - tags: Schlage / Allegion
+- [Allegion (NYSE: ALLE) SVP Blasko has 145 shares withheld for taxes - Stock Titan](https://news.google.com/rss/articles/CBMiqgFBVV95cUxNN3YwUzdZQklGdzVZZHI3MXJ0bVMxVm5WRHNaZVFFVjZxOFhCeS1ZUHVfUk1PSWN1THpuRlhPZDlYTm1mZlNIaGE5RlpybTFiTXZCTVUyNDBOVkk4bkhRcVNJTTFHNk5FVHpjT3BMc25RS2QwWVNOUk81R2UyLXpJUUtOa1B0VlpqaC1CRTVoQ0VSbUdIV2N6VkU5aHhTbFFFcUN3UWJ6WTF5Zw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-06
+  - tags: Schlage / Allegion
 - [SIA Opens Applications for Four 2026 Scholarship Award Programs](https://www.securitysales.com/news/sia-applications-2026-scholarship-award-programs/619587/) — Security Sales & Integration · 2026-07-06
   - tags: Wireless & smart access
+- [dormakaba Acquires UK's Style Group for Wall Solutions - SecurityInformed.com](https://news.google.com/rss/articles/CBMiswFBVV95cUxPNHp2ZFB6NmpVZ05ZaVZtY1ZPVTVjTzR3Uk1BSW9iYVZBVGFiSGJYVndqaDVyOF9qZDVoNmFmRWdGenhYQ3NpaVE3MFVNbjY4QkNnQW55cHRMNUJwdkJHSExuLTU3ZXBCanFkWlktY0pyTEFsVmtERWUtcm1iRHhXUmRGNV9XUTFWemZuSUYtOGVZVkQzNTh2RDhsZmZLalFxOTRMMWtUVC1oZG9LRnBSdHpZMA?oc=5) — dormakaba news (Google News) · 2026-07-06
+  - tags: dormakaba / RCI / BEST
 - [Seeing Around Corners with Jon Perry: Coffee Break with Jake](https://www.securitysales.com/insights/seeing-around-corners-jon-perry-coffee-break-with-jake/619580/) — Security Sales & Integration · 2026-07-06
   - tags: Wireless & smart access
 - [Why Response Time Is Becoming Security’s Most Important Metric](https://www.securitysales.com/insights/response-time-securitys-most-important-metric/619575/) — Security Sales & Integration · 2026-07-06
   - tags: Wireless & smart access
+- [Allegion plc outlines its security hardware strategy as a global building access supplier - AD HOC NEWS](https://news.google.com/rss/articles/CBMizAFBVV95cUxQTnl3RVhRcjRqRHhGdDVzaEM1eHJHaS1tWHJFdllWd2JqRlVsTU0zMjBZdGNkZGFFSU5EUGxQVzdKLXMzSXRBQ1NOMzRrN0NLdmRIc0pDX0UtSzI5M2RfZVdiSHJRTUFtalBYWnM1M0xIeG9KNG9fY0ZyakhaaVFuM3pURlhBMGh5Y1F2LXlVVGVjTGhEVEZJMmhaOFRZWm5KSVBYXzg1WHRIWElvaDljQlBKVzFqZWhzN3pla25vSnN0cmJnTlZHT2tSd3A?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-06
+  - tags: Schlage / Allegion
 - [Allied Universal Acquires Sentinel Offender Services of Anaheim, California](https://www.securitysales.com/news/allied-universal-acquires-sentinel-offender-services/619568/) — Security Sales & Integration · 2026-07-06
-  - tags: Wireless & smart access
-- [Honeywell Expands Fire Portfolio With Advanced Smoke Control & Connected Life Safety Innovations](https://www.sdmmag.com/articles/105582-honeywell-expands-fire-portfolio-with-advanced-smoke-control-and-connected-life-safety-innovations) — SDM Magazine · 2026-07-06
-  - tags: Codes & life safety
-- [Cawamo Names SSI Hall of Famer Goldfine Chief Marketing Officer](https://www.securitysales.com/news/cawamo-scott-goldfine-chief-marketing-officer/619555/) — Security Sales & Integration · 2026-07-02
-  - tags: Wireless & smart access
-- [DMP Expands Professional VUE Camera Line with VUE Plus](https://www.securitysales.com/news/dmp-expands-professional-vue-camera-line-vue-plus/619551/) — Security Sales & Integration · 2026-07-02
-  - tags: Wireless & smart access
-- [Foundation for Advancing Security Talent Names Executive Director](https://www.securitysales.com/news/fast-elli-reges-executive-director/619544/) — Security Sales & Integration · 2026-07-02
-  - tags: Wireless & smart access
-- [Police Arrest Empire State Climbers: Surveillance Videos of the Week](https://www.securitysales.com/news/police-empire-state-building-climbers-surveillance-videos-week/619534/) — Security Sales & Integration · 2026-07-02
-  - tags: Wireless & smart access
-- [Epson Introduces ColorWorks Color Label & Badge Printer for Visitor Management & Low-Volume Applications](https://www.sdmmag.com/articles/105576-epson-introduces-colorworks-color-label-and-badge-printer-for-visitor-management-and-low-volume-applications) — SDM Magazine · 2026-07-02
-  - tags: Reliability & quality
-- [Ewa Pigna, Honeywell Security and Access Solutions (SAS): Best Advice](https://www.securitysales.com/insights/ewa-pigna-honeywell-security-access-solutions-best-advice/619526/) — Security Sales & Integration · 2026-07-02
   - tags: Wireless & smart access
