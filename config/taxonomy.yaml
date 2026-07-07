@@ -1,0 +1,240 @@
+# Tagging taxonomy for the EMS VOC Radar.
+#
+# Every collected item's title + body is matched (case-insensitive, on word
+# boundaries) against these keyword lists. Multi-word phrases are allowed.
+# Edit freely — re-run `python -m voc analyze` to re-tag the whole database
+# after a taxonomy change.
+
+categories:
+  electric_strikes:
+    label: Electric strikes
+    keywords:
+      - electric strike
+      - electric strikes
+      - electrified strike
+      - strike body
+      - keeper
+      - fail secure strike
+      - fail safe strike
+  maglocks:
+    label: Magnetic locks
+    keywords:
+      - maglock
+      - maglocks
+      - mag lock
+      - mag locks
+      - magnetic lock
+      - magnetic locks
+      - electromagnetic lock
+      - shear lock
+      - holding force
+  exit_devices:
+    label: Exit devices & panic hardware
+    keywords:
+      - exit device
+      - exit devices
+      - panic bar
+      - panic hardware
+      - crash bar
+      - rim device
+      - vertical rod
+      - latch retraction
+      - request to exit
+      - rex sensor
+      - delayed egress
+  electrified_locks:
+    label: Electrified locksets & bolts
+    keywords:
+      - electrified lever
+      - electrified lockset
+      - electrified mortise
+      - electric bolt
+      - electric deadbolt
+      - solenoid bolt
+      - electrified trim
+      - electric latch
+  power_supplies:
+    label: Power supplies & PoE
+    keywords:
+      - power supply
+      - power supplies
+      - poe
+      - power over ethernet
+      - power transfer
+      - electric hinge
+      - door cord
+      - voltage drop
+      - current draw
+      - inrush
+  controllers_credentials:
+    label: Controllers, readers & credentials
+    keywords:
+      - access controller
+      - control panel
+      - door controller
+      - card reader
+      - keypad
+      - credential
+      - credentials
+      - prox card
+      - key fob
+      - mobile credential
+      - osdp
+      - wiegand
+      - 13.56 mhz
+      - mifare
+  door_monitoring:
+    label: Door status & monitoring
+    keywords:
+      - door position switch
+      - door contact
+      - door prop
+      - propped door
+      - door held open
+      - latch monitor
+      - bond sensor
+      - door status
+
+brands:
+  own:
+    HES:
+      keywords: ["hes", "hanchett"]
+    Securitron:
+      keywords: ["securitron"]
+    Alarm Controls:
+      keywords: ["alarm controls"]
+    Adams Rite:
+      keywords: ["adams rite", "adamsrite"]
+  # Sibling ASSA ABLOY brands — tracked separately from competitors.
+  assa_abloy_other:
+    ASSA ABLOY (other):
+      keywords: ["assa abloy", "sargent", "corbin russwin", "yale commercial", "norton rixson", "hid global"]
+  competitors:
+    Von Duprin:
+      keywords: ["von duprin", "vonduprin"]
+    Schlage / Allegion:
+      keywords: ["schlage", "allegion", "locknetics", "lcn"]
+    dormakaba / RCI / BEST:
+      keywords: ["dormakaba", "rutherford controls", "best access", "precision hardware"]
+    SDC:
+      keywords: ["sdc", "security door controls"]
+    Trine:
+      keywords: ["trine", "axion"]
+    Camden:
+      keywords: ["camden door controls", "camden controls", "cx-"]
+    Seco-Larm:
+      keywords: ["seco-larm", "secolarm", "enforcer"]
+    Command Access:
+      keywords: ["command access"]
+    Detex:
+      keywords: ["detex"]
+    Dortronics:
+      keywords: ["dortronics"]
+    Alarm Lock / Napco:
+      keywords: ["alarm lock", "trilogy", "napco"]
+    RCI:
+      keywords: ["rci"]
+
+themes:
+  install_troubleshooting:
+    label: Installation & troubleshooting
+    keywords:
+      - install
+      - installation
+      - installing
+      - wiring
+      - wire
+      - template
+      - troubleshoot
+      - troubleshooting
+      - buzzing
+      - not working
+      - won't lock
+      - wont lock
+      - won't release
+      - misaligned
+      - alignment
+  compatibility_retrofit:
+    label: Compatibility & retrofit
+    keywords:
+      - retrofit
+      - compatible
+      - compatibility
+      - replace
+      - replacement
+      - swap
+      - upgrade
+      - existing door
+      - aluminum storefront
+      - hollow metal
+  codes_compliance:
+    label: Codes & life safety
+    keywords:
+      - fire code
+      - fire rated
+      - fire-rated
+      - nfpa
+      - ibc
+      - ul 294
+      - ul 10c
+      - ul 1034
+      - ahj
+      - life safety
+      - free egress
+      - code compliant
+      - ada
+  reliability_quality:
+    label: Reliability & quality
+    keywords:
+      - failed
+      - failure
+      - broken
+      - defective
+      - warranty
+      - died
+      - stopped working
+      - burnt out
+      - burned out
+      - intermittent
+      - reliable
+      - reliability
+  purchase_intent:
+    label: Recommendations & purchase intent
+    keywords:
+      - recommend
+      - recommendation
+      - which strike
+      - which maglock
+      - what brand
+      - alternative to
+      - better than
+      - looking for
+      - worth it
+  pricing_availability:
+    label: Pricing & availability
+    keywords:
+      - price
+      - pricing
+      - expensive
+      - cheap
+      - cost
+      - lead time
+      - backorder
+      - back order
+      - discontinued
+      - out of stock
+      - distributor
+  smart_wireless:
+    label: Wireless & smart access
+    keywords:
+      - wireless
+      - bluetooth
+      - wifi
+      - wi-fi
+      - smart lock
+      - cloud
+      - app
+      - integration
+      - api
+      - z-wave
+      - zigbee

@@ -1,0 +1,173 @@
+"""End-to-end pipeline test on fixture data (no network).
+
+Run with: python -m pytest tests/  (or plain `python tests/test_pipeline.py`)
+"""
+
+from __future__ import annotations
+
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from voc import db as dbm  # noqa: E402
+from voc.analysis import period_bounds, tag_counts, weekly_volume  # noqa: E402
+from voc.config import load_taxonomy  # noqa: E402
+from voc.report import render_dashboard, render_digest  # noqa: E402
+from voc.tagging import Tagger  # noqa: E402
+
+
+def _iso(days_ago: float) -> str:
+    return (datetime.now(timezone.utc) - timedelta(days=days_ago)).isoformat(
+        timespec="seconds"
+    )
+
+
+def make_fixture_items() -> list[dict]:
+    return [
+        {
+            "source": "r/accesscontrol",
+            "source_type": "reddit",
+            "title": "HES 1006 electric strike buzzing but not releasing — wiring issue?",
+            "url": "https://www.reddit.com/r/accesscontrol/1",
+            "author": "installer42",
+            "published": _iso(1),
+            "body": "Installed a HES 1006 on an aluminum storefront, 12VDC power "
+                    "supply, it buzzes but the keeper won't release. Voltage drop?",
+            "score": 42,
+            "num_comments": 17,
+        },
+        {
+            "source": "r/accesscontrol",
+            "source_type": "reddit",
+            "title": "Securitron M680E vs generic maglock — worth the price?",
+            "url": "https://www.reddit.com/r/accesscontrol/2",
+            "author": "lowvoltguy",
+            "published": _iso(2),
+            "body": "Customer wants delayed egress. Is the Securitron holding force "
+                    "rating worth it over a cheap magnetic lock? Also looking at "
+                    "Seco-Larm as an alternative to keep cost down.",
+            "score": 15,
+            "num_comments": 9,
+        },
+        {
+            "source": "SDM Magazine",
+            "source_type": "rss",
+            "title": "Von Duprin launches new exit device with latch retraction",
+            "url": "https://example.com/vonduprin-launch",
+            "author": None,
+            "published": _iso(3),
+            "body": "Allegion brand Von Duprin announced a panic hardware line with "
+                    "quiet electric latch retraction and PoE power option.",
+            "score": None,
+            "num_comments": None,
+        },
+        {
+            "source": "Locksmith Ledger",
+            "source_type": "rss",
+            "title": "Choosing fail safe vs fail secure electric strikes for fire-rated openings",
+            "url": "https://example.com/failsafe",
+            "author": None,
+            "published": _iso(5),
+            "body": "NFPA and UL 10C considerations when speccing an electric strike "
+                    "on a fire rated door. Free egress must be maintained.",
+            "score": None,
+            "num_comments": None,
+        },
+        {
+            "source": "Camden Door Controls news",
+            "source_type": "web",
+            "title": "Camden Door Controls introduces new request to exit sensor line",
+            "url": "https://example.com/camden-rex",
+            "author": None,
+            "published": None,
+            "collected_at": _iso(0.5),
+            "body": None,
+            "score": None,
+            "num_comments": None,
+        },
+        # prior-period item for delta math
+        {
+            "source": "r/accesscontrol",
+            "source_type": "reddit",
+            "title": "Adams Rite 7400 deadlatch replacement on storefront door",
+            "url": "https://www.reddit.com/r/accesscontrol/3",
+            "author": "glazier9",
+            "published": _iso(10),
+            "body": "Replacing an Adams Rite deadlatch, need a compatible electric strike.",
+            "score": 8,
+            "num_comments": 4,
+        },
+    ]
+
+
+def test_pipeline(tmp_path=None):
+    tmp_path = tmp_path or Path("/tmp/voc-test")
+    tmp_path.mkdir(parents=True, exist_ok=True)
+    db_path = tmp_path / "test.db"
+    if db_path.exists():
+        db_path.unlink()
+
+    taxonomy = load_taxonomy()
+    tagger = Tagger(taxonomy)
+    items = make_fixture_items()
+    for it in items:
+        it["tags"] = tagger.tag(it["title"], it.get("body"))
+
+    # --- tagging assertions
+    by_url = {it["url"]: it for it in items}
+    hes = by_url["https://www.reddit.com/r/accesscontrol/1"]["tags"]
+    assert "HES" in hes.get("own_brands", []), hes
+    assert "Electric strikes" in hes.get("categories", []), hes
+    assert "Installation & troubleshooting" in hes.get("themes", []), hes
+
+    vd = by_url["https://example.com/vonduprin-launch"]["tags"]
+    assert "Von Duprin" in vd.get("competitors", []), vd
+    assert "Exit devices & panic hardware" in vd.get("categories", []), vd
+
+    sec = by_url["https://www.reddit.com/r/accesscontrol/2"]["tags"]
+    assert "Securitron" in sec.get("own_brands", []), sec
+    assert "Seco-Larm" in sec.get("competitors", []), sec
+
+    # word-boundary sanity: "rci" must not fire on unrelated words
+    assert "RCI" not in tagger.tag("Commercial door hardware overview").get(
+        "competitors", []
+    )
+
+    # --- storage round-trip + dedupe
+    conn = dbm.connect(db_path)
+    assert dbm.upsert_items(conn, items) == len(items)
+    assert dbm.upsert_items(conn, items) == 0  # idempotent
+
+    prev_start, cur_start, _ = period_bounds(7)
+    current = dbm.items_since(conn, cur_start)
+    previous = dbm.items_between(conn, prev_start, cur_start)
+    assert len(current) == 5, [i["title"] for i in current]
+    assert len(previous) == 1
+
+    cats = tag_counts(current, "categories")
+    assert cats["Electric strikes"] >= 2
+
+    vol = weekly_volume(dbm.all_items(conn))
+    assert len(vol) == 12 and sum(v for _, v in vol) == len(items)
+
+    # --- reports render and contain the expected content
+    digest = render_digest(current, previous, 7)
+    assert "Electric strikes" in digest and "Von Duprin" in digest
+
+    dash = render_dashboard(current, previous, dbm.all_items(conn), 7,
+                            insights_md="## Key takeaways\n- **Test** insight [#1]")
+    assert "<!DOCTYPE html>" in dash
+    assert "Brand share of voice" in dash
+    assert "Securitron" in dash
+    assert "<strong>Test</strong>" in dash
+
+    out = tmp_path / "dashboard.html"
+    out.write_text(dash, encoding="utf-8")
+    conn.close()
+    print(f"OK — dashboard written to {out}")
+
+
+if __name__ == "__main__":
+    test_pipeline()

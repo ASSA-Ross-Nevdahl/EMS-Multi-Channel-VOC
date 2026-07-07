@@ -1,0 +1,58 @@
+# Information sources for the EMS VOC Radar.
+#
+# Three collector types:
+#   rss    - RSS/Atom feeds from trade publications
+#   reddit - subreddit listings via Reddit's public JSON API (no auth required)
+#   web    - competitor news/press pages scraped with a CSS selector
+#
+# Feeds occasionally move or go down; every source is fetched independently and
+# a failure is logged without aborting the run.
+
+rss:
+  - name: Locksmith Ledger
+    url: https://www.locksmithledger.com/rss
+  - name: SDM Magazine
+    url: https://www.sdmmag.com/rss/articles
+  - name: Security Info Watch
+    url: https://www.securityinfowatch.com/rss
+  - name: Security Sales & Integration
+    url: https://www.securitysales.com/feed/
+  - name: SSI Access Control
+    url: https://www.securitysales.com/category/access/feed/
+  - name: Campus Safety Magazine
+    url: https://www.campussafetymagazine.com/feed/
+  - name: Doors & Hardware (DHI)
+    url: https://www.dhi.org/feed/
+
+reddit:
+  - subreddit: accesscontrol
+    listings: [new, top]      # top uses t=week
+    limit: 100
+  - subreddit: Locksmith
+    listings: [new]
+    limit: 100
+  - subreddit: CommercialAV   # occasional door hardware / access integration chatter
+    listings: [new]
+    limit: 50
+
+web:
+  # Competitor and adjacent-brand news pages. item_selector should match the
+  # anchor elements of headline links on the page.
+  - name: Allegion (Von Duprin / Schlage) newsroom
+    url: https://www.allegion.com/corp/en/news.html
+    item_selector: "a[href*='news']"
+  - name: dormakaba news
+    url: https://www.dormakaba.com/us-en/insights-news
+    item_selector: "a[href*='insights-news']"
+  - name: SDC Security Door Controls news
+    url: https://sdcsecurity.com/news.htm
+    item_selector: "a[href*='news']"
+  - name: Camden Door Controls news
+    url: https://www.camdencontrols.com/news
+    item_selector: "a[href*='news']"
+  - name: Detex news
+    url: https://www.detex.com/news/
+    item_selector: "a[href*='news']"
+  - name: Command Access news
+    url: https://www.commandaccess.com/blogs/news
+    item_selector: "a[href*='/blogs/news/']"

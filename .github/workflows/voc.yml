@@ -1,0 +1,52 @@
+name: VOC Radar weekly run
+
+on:
+  schedule:
+    # Mondays 11:00 UTC (~6-7am US Eastern)
+    - cron: "0 11 * * 1"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Reporting window in days"
+        default: "7"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: voc-radar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect, analyze, report
+        env:
+          # Optional: add ANTHROPIC_API_KEY as a repo secret to enable the
+          # Claude insight brief. The run works without it.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m voc run --days "${{ github.event.inputs.days || '7' }}" -v
+
+      - name: Commit data and reports
+        run: |
+          git config user.name "voc-radar[bot]"
+          git config user.email "voc-radar@users.noreply.github.com"
+          git add data/voc.db reports/
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit."
+          else
+            git commit -m "VOC Radar: scheduled run $(date -u +%F)"
+            git push
+          fi
