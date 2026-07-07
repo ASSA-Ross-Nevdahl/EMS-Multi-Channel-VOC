@@ -80,6 +80,20 @@ dashboard/digest are always one click away in `reports/`.
 To enable the insight brief in CI, add an `ANTHROPIC_API_KEY` repository
 secret. Everything else works with no configuration.
 
+### Live dashboard (GitHub Pages)
+
+Each run also publishes the dashboard to GitHub Pages, so the latest version
+is always at:
+
+```
+https://<owner>.github.io/<repo>/            (dashboard)
+https://<owner>.github.io/<repo>/digest-latest.md
+```
+
+The workflow attempts to enable Pages automatically on its first run. If
+that step is skipped due to permissions, enable it once manually:
+**Settings → Pages → Source: GitHub Actions**, then re-run the workflow.
+
 > **First-run note:** RSS feed URLs for trade publications occasionally move.
 > Check the first Actions run log — any source that fails is logged as a
 > warning with its URL. Fix the URL in `config/sources.yaml` and re-run.

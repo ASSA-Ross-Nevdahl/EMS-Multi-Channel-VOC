@@ -13,6 +13,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: voc-radar
@@ -50,3 +52,33 @@ jobs:
             git commit -m "VOC Radar: scheduled run $(date -u +%F)"
             git push
           fi
+
+      # --- GitHub Pages: publish the dashboard at the site root ---
+      - name: Stage Pages site
+        run: |
+          mkdir -p _site
+          cp -r reports/. _site/
+          cp reports/dashboard.html _site/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  # Separate job so a Pages hiccup never marks the data run as failed.
+  publish:
+    needs: run
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Enable Pages (first run only, no-op afterwards)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+        continue-on-error: true
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
