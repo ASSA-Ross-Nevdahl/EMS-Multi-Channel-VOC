@@ -1,35 +1,72 @@
-"""Reddit collector using the public JSON listings (no API key required).
+"""Reddit collector.
 
-Reddit rate-limits unauthenticated clients; we fetch one listing page per
-subreddit/listing pair with a descriptive User-Agent, which is well within
-the public allowance for a scheduled job.
+Preferred path: Reddit's OAuth API with an app-only token — create a free
+"script" app at https://www.reddit.com/prefs/apps and set REDDIT_CLIENT_ID
+and REDDIT_CLIENT_SECRET. This is required from cloud/CI runners (GitHub
+Actions), whose IPs Reddit blocks for unauthenticated requests.
+
+Fallback: the public JSON listings with a descriptive User-Agent, which
+work from residential networks without credentials.
 """
 
 from __future__ import annotations
 
 import logging
+import os
 import time
 from datetime import datetime, timezone
 
-from .http import fetch
+import requests
+
+from .http import USER_AGENT, fetch
 
 log = logging.getLogger(__name__)
 
 BODY_CHARS = 3000
 
 
+def _oauth_token() -> str | None:
+    """App-only OAuth token via client_credentials, if creds are configured."""
+    client_id = os.environ.get("REDDIT_CLIENT_ID")
+    client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
+    if not (client_id and client_secret):
+        return None
+    try:
+        resp = requests.post(
+            "https://www.reddit.com/api/v1/access_token",
+            auth=(client_id, client_secret),
+            data={"grant_type": "client_credentials"},
+            headers={"User-Agent": USER_AGENT},
+            timeout=20,
+        )
+        resp.raise_for_status()
+        return resp.json()["access_token"]
+    except Exception as exc:
+        log.warning("Reddit OAuth token request failed: %s", exc)
+        return None
+
+
 def collect_reddit(sources: list[dict]) -> list[dict]:
+    token = _oauth_token()
+    if token:
+        base, headers = "https://oauth.reddit.com", {"Authorization": f"Bearer {token}"}
+        log.info("using Reddit OAuth API")
+    else:
+        base, headers = "https://www.reddit.com", {}
+        log.info("no REDDIT_CLIENT_ID/SECRET set; using public Reddit JSON "
+                 "(blocked from cloud/CI IPs — set credentials for GitHub Actions)")
+
     items: list[dict] = []
     for src in sources:
         sub = src["subreddit"]
         limit = int(src.get("limit", 100))
         for listing in src.get("listings", ["new"]):
-            url = f"https://www.reddit.com/r/{sub}/{listing}.json"
+            url = f"{base}/r/{sub}/{listing}.json"
             params = {"limit": min(limit, 100), "raw_json": 1}
             if listing == "top":
                 params["t"] = "week"
             try:
-                resp = fetch(url, params=params)
+                resp = fetch(url, params=params, headers=headers)
                 items.extend(_parse_listing(sub, resp.json()))
             except Exception as exc:
                 log.warning("Reddit r/%s (%s) failed: %s", sub, listing, exc)

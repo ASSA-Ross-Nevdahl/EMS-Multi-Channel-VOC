@@ -67,9 +67,10 @@ def cmd_collect(conn, args) -> None:
     taxonomy = load_taxonomy(args.config)
     tagger = Tagger(taxonomy)
 
+    feeds = sources["rss"] + sources["competitor_news_rss"]
     items: list[dict] = []
-    log.info("collecting %d RSS feeds…", len(sources["rss"]))
-    items += collect_rss(sources["rss"])
+    log.info("collecting %d RSS feeds…", len(feeds))
+    items += collect_rss(feeds)
     log.info("collecting %d subreddits…", len(sources["reddit"]))
     items += collect_reddit(sources["reddit"])
     log.info("collecting %d competitor pages…", len(sources["web"]))

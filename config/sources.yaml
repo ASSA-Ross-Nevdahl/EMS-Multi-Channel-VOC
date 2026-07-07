@@ -9,20 +9,20 @@
 # a failure is logged without aborting the run.
 
 rss:
-  - name: Locksmith Ledger
-    url: https://www.locksmithledger.com/rss
   - name: SDM Magazine
     url: https://www.sdmmag.com/rss/articles
-  - name: Security Info Watch
-    url: https://www.securityinfowatch.com/rss
   - name: Security Sales & Integration
     url: https://www.securitysales.com/feed/
-  - name: SSI Access Control
-    url: https://www.securitysales.com/category/access/feed/
   - name: Campus Safety Magazine
     url: https://www.campussafetymagazine.com/feed/
-  - name: Doors & Hardware (DHI)
-    url: https://www.dhi.org/feed/
+  # Publications without a working native feed are covered via Google News
+  # RSS site searches — stable and CI-friendly.
+  - name: Locksmith Ledger
+    url: "https://news.google.com/rss/search?q=site:locksmithledger.com&hl=en-US&gl=US&ceid=US:en"
+  - name: Security Info Watch
+    url: "https://news.google.com/rss/search?q=site:securityinfowatch.com%20%22access%20control%22&hl=en-US&gl=US&ceid=US:en"
+  - name: Door hardware news (Google News)
+    url: "https://news.google.com/rss/search?q=%22electric%20strike%22%20OR%20%22maglock%22%20OR%20%22panic%20hardware%22%20OR%20%22exit%20device%22&hl=en-US&gl=US&ceid=US:en"
 
 reddit:
   - subreddit: accesscontrol
@@ -41,18 +41,20 @@ web:
   - name: Allegion (Von Duprin / Schlage) newsroom
     url: https://www.allegion.com/corp/en/news.html
     item_selector: "a[href*='news']"
-  - name: dormakaba news
-    url: https://www.dormakaba.com/us-en/insights-news
-    item_selector: "a[href*='insights-news']"
-  - name: SDC Security Door Controls news
-    url: https://sdcsecurity.com/news.htm
-    item_selector: "a[href*='news']"
   - name: Camden Door Controls news
     url: https://www.camdencontrols.com/news
     item_selector: "a[href*='news']"
-  - name: Detex news
-    url: https://www.detex.com/news/
-    item_selector: "a[href*='news']"
-  - name: Command Access news
-    url: https://www.commandaccess.com/blogs/news
-    item_selector: "a[href*='/blogs/news/']"
+
+# Competitors without a scrapeable news page are tracked via Google News RSS
+# brand searches (handled by the rss collector).
+competitor_news_rss:
+  - name: dormakaba news (Google News)
+    url: "https://news.google.com/rss/search?q=dormakaba&hl=en-US&gl=US&ceid=US:en"
+  - name: SDC news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Security%20Door%20Controls%22&hl=en-US&gl=US&ceid=US:en"
+  - name: Detex news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Detex%22%20door&hl=en-US&gl=US&ceid=US:en"
+  - name: Command Access news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Command%20Access%20Technologies%22&hl=en-US&gl=US&ceid=US:en"
+  - name: Von Duprin / Allegion news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Von%20Duprin%22%20OR%20%22Allegion%22&hl=en-US&gl=US&ceid=US:en"

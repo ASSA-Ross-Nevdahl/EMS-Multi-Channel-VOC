@@ -38,6 +38,11 @@ jobs:
           # Optional: add ANTHROPIC_API_KEY as a repo secret to enable the
           # Claude insight brief. The run works without it.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Required for Reddit collection from CI: Reddit blocks
+          # unauthenticated requests from cloud IPs. Create a free "script"
+          # app at https://www.reddit.com/prefs/apps and add both secrets.
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: |
           python -m voc run --days "${{ github.event.inputs.days || '7' }}" -v
 

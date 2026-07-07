@@ -40,12 +40,15 @@ config/taxonomy.yaml ──▶ keyword tagger (categories · brands · themes)
               optional: Claude insight brief (ANTHROPIC_API_KEY)
 ```
 
-- **RSS** — Locksmith Ledger, SDM Magazine, Security Info Watch, SSI,
-  Campus Safety, DHI (stdlib XML parsing; no fragile dependencies).
-- **Reddit** — r/accesscontrol, r/Locksmith and friends via the public JSON
-  listings (no API key needed; polite UA + rate limiting).
-- **Web** — competitor news pages (Allegion, dormakaba, SDC, Camden, Detex,
-  Command Access) scraped with per-source CSS selectors.
+- **RSS** — SDM Magazine, Security Sales & Integration, Campus Safety
+  directly; Locksmith Ledger, Security Info Watch, and per-competitor news
+  (dormakaba, SDC, Detex, Command Access, Von Duprin/Allegion) via Google
+  News RSS searches (stdlib XML parsing; no fragile dependencies).
+- **Reddit** — r/accesscontrol, r/Locksmith and friends. From CI this
+  requires free Reddit API credentials (see below); from a residential
+  network the public JSON listings work without them.
+- **Web** — competitor news pages (Allegion newsroom, Camden) scraped with
+  per-source CSS selectors.
 
 Every source is fetched independently — one broken feed never aborts a run.
 
@@ -77,8 +80,12 @@ UTC** (and on demand via *Run workflow*), then commits the updated database
 and reports back to the repo — so trend history accumulates and the latest
 dashboard/digest are always one click away in `reports/`.
 
-To enable the insight brief in CI, add an `ANTHROPIC_API_KEY` repository
-secret. Everything else works with no configuration.
+Repository secrets to configure (Settings → Secrets and variables → Actions):
+
+| Secret | Purpose |
+|---|---|
+| `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` | **Needed for Reddit collection in CI.** Reddit blocks unauthenticated requests from cloud IPs. Create a free app at [reddit.com/prefs/apps](https://www.reddit.com/prefs/apps) (type: *script*); the ID is the string under the app name, the secret is labeled. |
+| `ANTHROPIC_API_KEY` | Optional — enables the Claude insight brief. |
 
 ### Live dashboard (GitHub Pages)
 

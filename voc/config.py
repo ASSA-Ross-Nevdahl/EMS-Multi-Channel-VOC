@@ -16,6 +16,7 @@ def load_sources(config_dir: Path | None = None) -> dict:
     data.setdefault("rss", [])
     data.setdefault("reddit", [])
     data.setdefault("web", [])
+    data.setdefault("competitor_news_rss", [])
     return data
 
 
