@@ -7,6 +7,8 @@ from datetime import datetime, timezone
 
 from ..analysis import (
     brand_mentions,
+    news_items,
+    news_type_counts,
     notable_items,
     source_type_counts,
     tag_counts,
@@ -34,8 +36,27 @@ def render_digest(
         "",
     ]
 
+    nt_now = news_type_counts(current)
+    nt_prev = news_type_counts(previous)
+    lines += [
+        f"**News split:** {nt_now.get('Product', 0)} product-level "
+        f"({_delta(nt_now.get('Product', 0), nt_prev.get('Product', 0))}), "
+        f"{nt_now.get('Business', 0)} business-level "
+        f"({_delta(nt_now.get('Business', 0), nt_prev.get('Business', 0))}), "
+        f"{nt_now.get('Other', 0)} unclassified.",
+        "",
+    ]
+
     if insights_md:
         lines += ["---", "", "# Insights (Claude analysis)", "", insights_md, "", "---", ""]
+
+    lines += _news_section(
+        "Product-level news (roadmap signal)", news_items(current, "Product", limit=25)
+    )
+    lines += _news_section(
+        "Business-level news (competitive context)",
+        news_items(current, "Business", limit=15),
+    )
 
     lines += _count_section(
         "Mentions by product category",
@@ -74,6 +95,26 @@ def render_digest(
             lines.append(f"  - tags: {tag_str}")
     lines.append("")
     return "\n".join(lines)
+
+
+def _news_section(title: str, items: list[dict]) -> list[str]:
+    lines = [f"## {title}", ""]
+    if not items:
+        return lines + ["_None this period._", ""]
+    for it in items:
+        date = (it.get("published") or it.get("collected_at") or "")[:10]
+        meta = " · ".join(x for x in (it["source"], date) if x)
+        cats = ", ".join(it.get("tags", {}).get("categories", []))
+        brands = ", ".join(
+            it.get("tags", {}).get("own_brands", [])
+            + it.get("tags", {}).get("competitors", [])
+        )
+        tail = "; ".join(x for x in (brands, cats) if x)
+        line = f"- [{it['title']}]({it['url']}) — {meta}"
+        if tail:
+            line += f" — _{tail}_"
+        lines.append(line)
+    return lines + [""]
 
 
 def _count_section(title: str, now: Counter, prev: Counter) -> list[str]:

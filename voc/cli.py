@@ -18,7 +18,8 @@ from pathlib import Path
 
 from . import db as dbm
 from . import llm
-from .analysis import notable_items, period_bounds
+from .analysis import news_items, notable_items, period_bounds
+from .classify import LABELS, NewsClassifier
 from .collectors import collect_reddit, collect_rss, collect_web
 from .config import DEFAULT_CONFIG_DIR, load_sources, load_taxonomy
 from .report import render_dashboard, render_digest
@@ -62,10 +63,21 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+def _tag_and_classify(it: dict, tagger: Tagger, classifier: NewsClassifier) -> dict:
+    tags = tagger.tag(it["title"], it.get("body"))
+    result = classifier.classify(
+        it["title"], it.get("body"), tags, it["source_type"]
+    )
+    if result is not None:
+        tags["news_type"] = [LABELS[result[0]]]
+    return tags
+
+
 def cmd_collect(conn, args) -> None:
     sources = load_sources(args.config)
     taxonomy = load_taxonomy(args.config)
     tagger = Tagger(taxonomy)
+    classifier = NewsClassifier(taxonomy)
 
     feeds = sources["rss"] + sources["competitor_news_rss"]
     items: list[dict] = []
@@ -77,18 +89,20 @@ def cmd_collect(conn, args) -> None:
     items += collect_web(sources["web"])
 
     for it in items:
-        it["tags"] = tagger.tag(it["title"], it.get("body"))
+        it["tags"] = _tag_and_classify(it, tagger, classifier)
 
     new = dbm.upsert_items(conn, items)
     log.info("collected %d items (%d new)", len(items), new)
 
 
 def cmd_analyze(conn, args) -> None:
-    """Re-tag every stored item against the current taxonomy."""
-    tagger = Tagger(load_taxonomy(args.config))
+    """Re-tag and re-classify every stored item against the current taxonomy."""
+    taxonomy = load_taxonomy(args.config)
+    tagger = Tagger(taxonomy)
+    classifier = NewsClassifier(taxonomy)
     count = 0
     for it in dbm.all_items(conn):
-        dbm.update_tags(conn, it["id"], tagger.tag(it["title"], it.get("body")))
+        dbm.update_tags(conn, it["id"], _tag_and_classify(it, tagger, classifier))
         count += 1
     conn.commit()
     log.info("re-tagged %d items", count)
@@ -105,13 +119,32 @@ def cmd_report(conn, args) -> None:
     insights = None
     if not args.no_llm:
         if llm.credentials_available():
+            # Refine product/business labels on the reporting window (keyword
+            # classification is the persisted baseline; this sharpens the
+            # ambiguous cases in-memory for the report).
+            refine_pool = current + previous
+            overrides = llm.classify_news_types(refine_pool)
+            if overrides:
+                applied = 0
+                for it in refine_pool:
+                    label_key = overrides.get(it["id"])
+                    if label_key:
+                        it["tags"]["news_type"] = [LABELS[label_key]]
+                        applied += 1
+                log.info("Claude refined %d product/business labels", applied)
+
             log.info("generating Claude insight brief…")
             insights = llm.generate_insights(notable_items(current, limit=50))
             if insights is None:
                 log.warning("insight brief unavailable; continuing without it")
         else:
-            log.info("no Anthropic credentials found; skipping insight brief "
-                     "(set ANTHROPIC_API_KEY to enable)")
+            log.info("no Anthropic credentials found; skipping Claude "
+                     "classification + insight brief (set ANTHROPIC_API_KEY)")
+
+    prod = news_items(current, "Product")
+    log.info("classified: %d product-level, %d business-level news items "
+             "this period",
+             len(prod), len(news_items(current, "Business")))
 
     args.out.mkdir(parents=True, exist_ok=True)
     digest = render_digest(current, previous, args.days, insights)

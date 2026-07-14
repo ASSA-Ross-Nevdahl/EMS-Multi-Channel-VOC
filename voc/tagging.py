@@ -34,7 +34,9 @@ class Tagger:
         return tags
 
 
-def _phrase_pattern(keywords: list[str]) -> re.Pattern:
+def phrase_pattern(keywords: list[str]) -> re.Pattern:
+    """Compile a keyword list into one case-insensitive, word-boundary-anchored
+    alternation. Multi-word phrases match across whitespace."""
     parts = []
     for kw in keywords:
         escaped = re.escape(kw.strip().lower()).replace(r"\ ", r"\s+")
@@ -50,7 +52,7 @@ def _compile_group(group: dict) -> list[tuple[str, re.Pattern]]:
         label = entry.get("label") or "?"
         keywords = entry.get("keywords") or []
         if keywords:
-            out.append((label, _phrase_pattern(keywords)))
+            out.append((label, phrase_pattern(keywords)))
     return out
 
 
@@ -60,5 +62,5 @@ def _compile_brand_group(group: dict) -> list[tuple[str, re.Pattern]]:
     for name, entry in group.items():
         keywords = entry.get("keywords") or []
         if keywords:
-            out.append((name, _phrase_pattern(keywords)))
+            out.append((name, phrase_pattern(keywords)))
     return out

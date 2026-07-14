@@ -6,6 +6,8 @@ from __future__ import annotations
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 
+from .classify import news_type_of
+
 
 def period_bounds(days: int, now: datetime | None = None) -> tuple[str, str, str]:
     """Return (prev_start, current_start, now) as ISO strings for a window of
@@ -75,6 +77,26 @@ def notable_items(items: list[dict], limit: int = 15) -> list[dict]:
     half = max(limit // 2, 1)
     picked = reddit[:half] + articles[: limit - min(len(reddit), half)]
     return picked[:limit]
+
+
+def news_type_counts(items: list[dict]) -> Counter:
+    """Count Product / Business / Other across classified news items."""
+    c: Counter = Counter()
+    for it in items:
+        label = news_type_of(it)
+        if label:
+            c[label] += 1
+    return c
+
+
+def news_items(items: list[dict], label: str, limit: int = 20) -> list[dict]:
+    """News items of a given type (e.g. 'Product'), most recent first."""
+    subset = [it for it in items if news_type_of(it) == label]
+    return sorted(
+        subset,
+        key=lambda it: it.get("published") or it.get("collected_at") or "",
+        reverse=True,
+    )[:limit]
 
 
 def brand_mentions(items: list[dict]) -> dict[str, Counter]:

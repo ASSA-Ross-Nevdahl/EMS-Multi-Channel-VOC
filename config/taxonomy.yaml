@@ -135,6 +135,134 @@ brands:
     RCI:
       keywords: ["rci"]
 
+# Product-vs-business classification of news items (see voc/classify.py).
+# An item is scored against both lists; the higher score wins, ties/no-signal
+# fall to "Other". Tune these lists to shift the split, then re-run
+# `python -m voc analyze`.
+news_type:
+  product:
+    label: Product-level
+    keywords:
+      # announcing or evolving a thing you can spec / buy / install
+      - launch
+      - launches
+      - launched
+      - launching
+      - unveil
+      - unveils
+      - unveiled
+      - introduce
+      - introduces
+      - introducing
+      - announces
+      - debut
+      - debuts
+      - releases
+      - released
+      - rolls out
+      - rolled out
+      - now available
+      - now shipping
+      - new product
+      - new line
+      - product line
+      - product family
+      - next generation
+      - next-gen
+      - new version
+      - new model
+      - redesigned
+      - upgraded
+      - new feature
+      - features
+      - firmware
+      - software update
+      - new release
+      - patent
+      - patented
+      - certified
+      - certification
+      - ul listed
+      - ul 294
+      - fcc
+      - spec sheet
+      - specification
+      - retrofit kit
+      - integration with
+      - now integrates
+      - recall
+      - recalled
+      - field notice
+  business:
+    label: Business-level
+    keywords:
+      # corporate / market activity
+      - acquire
+      - acquires
+      - acquired
+      - acquisition
+      - to acquire
+      - merger
+      - merges
+      - merge with
+      - buys
+      - acquires stake
+      - names
+      - appoints
+      - appointed
+      - promotes
+      - promoted
+      - hires
+      - hired
+      - joins as
+      - new ceo
+      - new cfo
+      - new coo
+      - new president
+      - chief executive
+      - chief financial
+      - chief operating
+      - executive chairman
+      - vice president
+      - board of directors
+      - steps down
+      - retires
+      - earnings
+      - revenue
+      - quarterly results
+      - fiscal
+      - financial results
+      - full-year
+      - full year
+      - funding round
+      - investment
+      - private equity
+      - ipo
+      - partnership
+      - partners with
+      - teams up
+      - joint venture
+      - distribution agreement
+      - distributor
+      - expands presence
+      - expands its
+      - opens new
+      - new facility
+      - new headquarters
+      - relocates
+      - expansion
+      - scholarship
+      - award
+      - awards
+      - honored
+      - recognized
+      - wins award
+      - layoffs
+      - restructuring
+      - rebrand
+      - rebrands
+      - anniversary
+
 themes:
   install_troubleshooting:
     label: Installation & troubleshooting

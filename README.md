@@ -30,7 +30,7 @@ config/sources.yaml ──▶ collectors (RSS · Reddit JSON · web pages)
                         data/voc.db  (SQLite, deduped by URL, history accumulates)
                               │
 config/taxonomy.yaml ──▶ keyword tagger (categories · brands · themes)
-                              │
+                              │            + news classifier (product vs business)
                               ▼
                    analysis (period counts, deltas, weekly trend)
                               │            │
@@ -51,6 +51,29 @@ config/taxonomy.yaml ──▶ keyword tagger (categories · brands · themes)
   per-source CSS selectors.
 
 Every source is fetched independently — one broken feed never aborts a run.
+
+### Product vs. business classification
+
+Trade-press and competitor-news items are classified into **product-level**
+(roadmap-relevant: launches, new features, spec/firmware changes,
+certifications, recalls, integrations) vs. **business-level** (M&A, executive
+changes, financials, distribution deals, expansion, awards). This is the
+primary signal for product managers — the dashboard and digest lead with a
+**Product-level news** section and keep business news as secondary context.
+
+Classification runs in two layers:
+
+1. **Keyword scoring** (`config/taxonomy.yaml` → `news_type:`) — always on,
+   transparent, editable. Each item is scored against the product and
+   business keyword lists; the higher score wins, ties/no-signal fall to
+   *Other*. Edit the lists and re-run `python -m voc analyze` to reclassify.
+2. **Claude refinement** (optional, when `ANTHROPIC_API_KEY` is set) — a
+   single batched call re-labels the reporting-window items, sharpening the
+   ambiguous cases the keywords can't decide (e.g. a company that makes
+   strikes being acquired is *business*, not *product*).
+
+Reddit discussion is installer voice-of-customer, not news, so it is left
+unclassified and surfaces under *Voice of the field* instead.
 
 ## Running it
 

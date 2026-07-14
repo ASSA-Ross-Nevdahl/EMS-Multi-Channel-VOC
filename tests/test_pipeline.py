@@ -12,7 +12,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from voc import db as dbm  # noqa: E402
-from voc.analysis import period_bounds, tag_counts, weekly_volume  # noqa: E402
+from voc.analysis import (  # noqa: E402
+    news_items,
+    news_type_counts,
+    period_bounds,
+    tag_counts,
+    weekly_volume,
+)
+from voc.classify import LABELS, NewsClassifier  # noqa: E402
 from voc.config import load_taxonomy  # noqa: E402
 from voc.report import render_dashboard, render_digest  # noqa: E402
 from voc.tagging import Tagger  # noqa: E402
@@ -111,9 +118,15 @@ def test_pipeline(tmp_path=None):
 
     taxonomy = load_taxonomy()
     tagger = Tagger(taxonomy)
+    classifier = NewsClassifier(taxonomy)
     items = make_fixture_items()
     for it in items:
         it["tags"] = tagger.tag(it["title"], it.get("body"))
+        result = classifier.classify(
+            it["title"], it.get("body"), it["tags"], it["source_type"]
+        )
+        if result is not None:
+            it["tags"]["news_type"] = [LABELS[result[0]]]
 
     # --- tagging assertions
     by_url = {it["url"]: it for it in items}
@@ -135,6 +148,25 @@ def test_pipeline(tmp_path=None):
         "competitors", []
     )
 
+    # --- product vs business classification
+    vd_launch = by_url["https://example.com/vonduprin-launch"]["tags"]
+    assert vd_launch.get("news_type") == ["Product"], vd_launch  # "launches"
+    # a Reddit discussion is not news → no news_type label
+    assert "news_type" not in hes
+
+    # direct classifier checks on unambiguous headlines
+    assert classifier.classify(
+        "dormakaba appoints new CEO effective next quarter", None, {}, "rss"
+    )[0] == "business"
+    assert classifier.classify(
+        "SDC unveils new fail-safe electric strike with PoE", None, {}, "rss"
+    )[0] == "product"
+    assert classifier.classify(
+        "Minuteman Security acquires Performance Link Technologies", None, {}, "rss"
+    )[0] == "business"
+    # Reddit source is never classified as news
+    assert classifier.classify("anything", None, {}, "reddit") is None
+
     # --- storage round-trip + dedupe
     conn = dbm.connect(db_path)
     assert dbm.upsert_items(conn, items) == len(items)
@@ -152,9 +184,16 @@ def test_pipeline(tmp_path=None):
     vol = weekly_volume(dbm.all_items(conn))
     assert len(vol) == 12 and sum(v for _, v in vol) == len(items)
 
+    # classification counts + filtering
+    nt = news_type_counts(current)
+    assert nt.get("Product", 0) >= 1
+    prod = news_items(current, "Product")
+    assert any("Von Duprin" in it["title"] for it in prod)
+
     # --- reports render and contain the expected content
     digest = render_digest(current, previous, 7)
     assert "Electric strikes" in digest and "Von Duprin" in digest
+    assert "Product-level news" in digest and "Business-level news" in digest
 
     dash = render_dashboard(current, previous, dbm.all_items(conn), 7,
                             insights_md="## Key takeaways\n- **Test** insight [#1]")
@@ -162,6 +201,7 @@ def test_pipeline(tmp_path=None):
     assert "Brand share of voice" in dash
     assert "Securitron" in dash
     assert "<strong>Test</strong>" in dash
+    assert "Product-level news" in dash and "Business-level news" in dash
 
     out = tmp_path / "dashboard.html"
     out.write_text(dash, encoding="utf-8")

@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 
 from ..analysis import (
     brand_mentions,
+    news_items,
+    news_type_counts,
     notable_items,
     source_type_counts,
     tag_counts,
@@ -111,6 +113,9 @@ table.items td.num { text-align: right; font-variant-numeric: tabular-nums; whit
 table.items a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--baseline); }
 table.items a:hover { border-bottom-color: var(--series-1); }
 .tag { display: inline-block; font-size: 11.5px; color: var(--text-secondary); background: var(--page); border: 1px solid var(--grid); border-radius: 4px; padding: 0 6px; margin: 1px 3px 1px 0; white-space: nowrap; }
+.pill { font-size: 11px; font-weight: 500; border-radius: 10px; padding: 1px 9px; vertical-align: middle; margin-left: 6px; }
+.pill.s1 { background: var(--series-1); color: #fff; }
+.pill.muted { background: var(--page); color: var(--text-muted); border: 1px solid var(--grid); }
 .insights { font-size: 14px; }
 .insights h2 { font-size: 15px; margin: 16px 0 6px; }
 .insights h2:first-child { margin-top: 0; }
@@ -129,22 +134,20 @@ def render_dashboard(
     insights_md: str | None = None,
 ) -> str:
     now = datetime.now(timezone.utc)
-    st_now = source_type_counts(current)
-    st_prev = source_type_counts(previous)
     brands_now = brand_mentions(current)
     brands_prev = brand_mentions(previous)
     comp_total_now = sum(brands_now["competitors"].values())
     comp_total_prev = sum(brands_prev["competitors"].values())
+    nt_now = news_type_counts(current)
+    nt_prev = news_type_counts(previous)
 
     tiles = "".join(
         [
             _tile("Items collected", len(current), len(previous)),
-            _tile("Reddit discussions", st_now.get("reddit", 0), st_prev.get("reddit", 0)),
-            _tile(
-                "Articles & news",
-                st_now.get("rss", 0) + st_now.get("web", 0),
-                st_prev.get("rss", 0) + st_prev.get("web", 0),
-            ),
+            _tile("Product-level news", nt_now.get("Product", 0),
+                  nt_prev.get("Product", 0), accent="s1"),
+            _tile("Business-level news", nt_now.get("Business", 0),
+                  nt_prev.get("Business", 0)),
             _tile("Competitor mentions", comp_total_now, comp_total_prev),
         ]
     )
@@ -154,7 +157,17 @@ def render_dashboard(
     brand_chart = _brand_chart(brands_now)
     spark = _sparkline(weekly_volume(all_items))
     insights_html = _md_to_html(insights_md) if insights_md else ""
-    items_table = _items_table(notable_items(current, limit=20))
+    product_table = _items_table(news_items(current, "Product", limit=25))
+    business_table = _items_table(news_items(current, "Business", limit=20))
+    reddit_notable = [it for it in notable_items(current, limit=8)
+                      if it["source_type"] == "reddit"]
+    reddit_section = (
+        '<section class="card"><h2>Voice of the field</h2>'
+        '<p class="sub">Top installer/integrator discussion this period</p>'
+        f"{_items_table(reddit_notable)}</section>"
+        if reddit_notable
+        else ""
+    )
 
     insights_card = (
         f'<section class="card"><h2>Insights (Claude analysis)</h2>'
@@ -210,10 +223,18 @@ def render_dashboard(
 </section>
 
 <section class="card">
-  <h2>Notable items</h2>
-  <p class="sub">Highest-engagement discussions and most recent tagged articles</p>
-  {items_table}
+  <h2>Product-level news <span class="pill s1">roadmap signal</span></h2>
+  <p class="sub">New/updated products, features, specs, certifications, recalls — most recent first</p>
+  {product_table}
 </section>
+
+<section class="card">
+  <h2>Business-level news <span class="pill muted">context</span></h2>
+  <p class="sub">M&amp;A, leadership, financials, channel, expansion, awards — background, not the headline</p>
+  {business_table}
+</section>
+
+{reddit_section}
 
 <footer>EMS VOC Radar · public sources only (trade press RSS, Reddit public API, competitor news pages) · see reports/digest-latest.md for the text version</footer>
 </div>
@@ -222,12 +243,13 @@ def render_dashboard(
 """
 
 
-def _tile(label: str, value: int, prev: int) -> str:
+def _tile(label: str, value: int, prev: int, accent: str | None = None) -> str:
     d = value - prev
     cls, arrow = ("up", "▲") if d > 0 else ("down", "▼") if d < 0 else ("flat", "–")
     delta = f"{arrow} {abs(d)}" if d else "– no change"
+    style = f' style="border-left:3px solid var(--series-1)"' if accent == "s1" else ""
     return (
-        f'<div class="tile"><div class="label">{html.escape(label)}</div>'
+        f'<div class="tile"{style}><div class="label">{html.escape(label)}</div>'
         f'<div class="value">{value:,}</div>'
         f'<div class="delta {cls}">{delta}</div></div>'
     )
@@ -310,32 +332,41 @@ def _sparkline(series: list[tuple[str, int]], width: int = 720, height: int = 64
 def _items_table(items: list[dict]) -> str:
     if not items:
         return '<p class="empty">Nothing tagged this period.</p>'
+    # Only show the engagement column when at least one row has engagement
+    # (news articles have none; Reddit discussions do).
+    show_engagement = any(it.get("score") is not None for it in items)
     rows = []
     for it in items:
         date = (it.get("published") or it.get("collected_at") or "")[:10]
-        engagement = (
-            f"{it['score']:,} pts · {it.get('num_comments') or 0} com."
-            if it.get("score") is not None
-            else "—"
-        )
         tags = it.get("tags", {})
+        # news_type is conveyed by the section the row lives in, so it's
+        # omitted here to avoid a redundant chip on every row.
         tag_html = "".join(
             f'<span class="tag">{html.escape(v)}</span>'
             for key in ("own_brands", "competitors", "categories", "themes")
             for v in tags.get(key, [])
         )
+        engagement_cell = ""
+        if show_engagement:
+            eng = (
+                f"{it['score']:,} pts · {it.get('num_comments') or 0} com."
+                if it.get("score") is not None
+                else "—"
+            )
+            engagement_cell = f'<td class="num">{eng}</td>'
         rows.append(
             "<tr>"
             f'<td><a href="{html.escape(it["url"], quote=True)}">{html.escape(it["title"])}</a>'
             f"<div>{tag_html}</div></td>"
             f"<td>{html.escape(it['source'])}</td>"
-            f'<td class="num">{engagement}</td>'
+            f"{engagement_cell}"
             f'<td class="num">{date}</td>'
             "</tr>"
         )
+    eng_header = "<th>Engagement</th>" if show_engagement else ""
     return (
         '<table class="items"><thead><tr>'
-        "<th>Item</th><th>Source</th><th>Engagement</th><th>Date</th>"
+        f"<th>Item</th><th>Source</th>{eng_header}<th>Date</th>"
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
     )
 
