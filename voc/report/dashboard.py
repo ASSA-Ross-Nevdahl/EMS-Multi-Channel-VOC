@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import html
 import re
-from collections import Counter
 from datetime import datetime, timezone
 
 from ..analysis import (
@@ -18,10 +17,9 @@ from ..analysis import (
     news_items,
     news_type_counts,
     notable_items,
-    source_type_counts,
-    tag_counts,
     weekly_volume,
 )
+from ..classify import news_type_of
 
 CSS = """
 :root {
@@ -116,6 +114,22 @@ table.items a:hover { border-bottom-color: var(--series-1); }
 .pill { font-size: 11px; font-weight: 500; border-radius: 10px; padding: 1px 9px; vertical-align: middle; margin-left: 6px; }
 .pill.s1 { background: var(--series-1); color: #fff; }
 .pill.muted { background: var(--page); color: var(--text-muted); border: 1px solid var(--grid); }
+.drill-row { cursor: pointer; border-radius: 6px; }
+.drill-row:hover { background: var(--page); }
+.drill-row:focus-visible { outline: 2px solid var(--series-1); outline-offset: 1px; }
+.drill-row[aria-expanded="true"] .name { color: var(--text-primary); font-weight: 600; }
+.caret { color: var(--text-muted); font-size: 10px; margin-left: 4px; display: inline-block; transition: transform .12s ease; }
+.drill-row[aria-expanded="true"] .caret { transform: rotate(90deg); }
+.drill-panel { margin: 0 0 10px 0; padding: 6px 12px; border-left: 2px solid var(--series-1); background: var(--page); border-radius: 0 6px 6px 0; }
+.drill-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--grid); font-size: 13px; }
+.drill-item:last-child { border-bottom: 0; }
+.drill-item a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--baseline); }
+.drill-item a:hover { border-bottom-color: var(--series-1); }
+.di-meta { color: var(--text-muted); font-size: 12px; margin-left: auto; white-space: nowrap; padding-left: 12px; font-variant-numeric: tabular-nums; }
+.nt-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: 0 0 auto; align-self: center; }
+.nt-dot.product { background: var(--series-1); }
+.nt-dot.business { background: var(--text-muted); }
+.di-more { color: var(--text-muted); font-size: 12px; padding-top: 6px; }
 .insights { font-size: 14px; }
 .insights h2 { font-size: 15px; margin: 16px 0 6px; }
 .insights h2:first-child { margin-top: 0; }
@@ -152,9 +166,9 @@ def render_dashboard(
         ]
     )
 
-    categories_chart = _bar_chart(tag_counts(current, "categories"))
-    themes_chart = _bar_chart(tag_counts(current, "themes"))
-    brand_chart = _brand_chart(brands_now)
+    categories_chart = _drill_bar_chart(current, "categories", "cat")
+    themes_chart = _drill_bar_chart(current, "themes", "theme")
+    brand_chart = _brand_chart(current)
     spark = _sparkline(weekly_volume(all_items))
     insights_html = _md_to_html(insights_md) if insights_md else ""
     product_table = _items_table(news_items(current, "Product", limit=25))
@@ -200,19 +214,19 @@ def render_dashboard(
 <div class="grid2">
   <section class="card">
     <h2>Mentions by product category</h2>
-    <p class="sub">Tagged items this period</p>
+    <p class="sub">Tagged items this period · click a bar to see the stories</p>
     {categories_chart}
   </section>
   <section class="card">
     <h2>Themes</h2>
-    <p class="sub">What the conversation is about</p>
+    <p class="sub">What the conversation is about · click a bar to see the stories</p>
     {themes_chart}
   </section>
 </div>
 
 <section class="card">
   <h2>Brand share of voice</h2>
-  <p class="sub">Mentions across all channels this period</p>
+  <p class="sub">Mentions across all channels this period · click a bar to see the stories</p>
   {brand_chart}
 </section>
 
@@ -238,6 +252,29 @@ def render_dashboard(
 
 <footer>EMS VOC Radar · public sources only (trade press RSS, Reddit public API, competitor news pages) · see reports/digest-latest.md for the text version</footer>
 </div>
+<script>
+(function () {{
+  function toggle(row) {{
+    var panel = document.getElementById(row.getAttribute('data-target'));
+    if (!panel) return;
+    var isOpen = !panel.hasAttribute('hidden');
+    var card = row.closest('.card');
+    // accordion: one open panel per card
+    card.querySelectorAll('.drill-panel').forEach(function (p) {{ p.setAttribute('hidden', ''); }});
+    card.querySelectorAll('.drill-row').forEach(function (r) {{ r.setAttribute('aria-expanded', 'false'); }});
+    if (!isOpen) {{
+      panel.removeAttribute('hidden');
+      row.setAttribute('aria-expanded', 'true');
+    }}
+  }}
+  document.querySelectorAll('.drill-row').forEach(function (row) {{
+    row.addEventListener('click', function () {{ toggle(row); }});
+    row.addEventListener('keydown', function (e) {{
+      if (e.key === 'Enter' || e.key === ' ') {{ e.preventDefault(); toggle(row); }}
+    }});
+  }});
+}})();
+</script>
 </body>
 </html>
 """
@@ -255,49 +292,99 @@ def _tile(label: str, value: int, prev: int, accent: str | None = None) -> str:
     )
 
 
-def _bar_chart(counts: Counter, series_cls: str = "s1", max_rows: int = 10) -> str:
-    if not counts:
+def _drill_row(name: str, count: int, width: int, cls: str, pid: str,
+               items: list[dict]) -> str:
+    """One clickable bar row plus its (initially hidden) items panel."""
+    return (
+        f'<div class="barrow drill-row" role="button" tabindex="0" '
+        f'aria-expanded="false" aria-controls="{pid}" data-target="{pid}">'
+        f'<div class="name" title="{html.escape(name)}">{html.escape(name)}</div>'
+        f'<div class="track"><div class="bar {cls}" style="width:{width}%"></div>'
+        f'<span class="val">{count:,}</span>'
+        f'<span class="caret" aria-hidden="true">&#9656;</span></div></div>'
+        f'<div class="drill-panel" id="{pid}" role="region" '
+        f'aria-label="{html.escape(name)} items" hidden>{_drill_items(items)}</div>'
+    )
+
+
+def _drill_bar_chart(items: list[dict], tag_key: str, prefix: str,
+                     max_rows: int = 10) -> str:
+    """Bar chart whose bars expand to list the items behind each count."""
+    groups: dict[str, list[dict]] = {}
+    for it in items:
+        for name in it.get("tags", {}).get(tag_key, []):
+            groups.setdefault(name, []).append(it)
+    if not groups:
         return '<p class="empty">No tagged mentions this period.</p>'
-    top = counts.most_common(max_rows)
-    peak = max(c for _, c in top)
-    rows = []
-    for name, count in top:
-        width = max(round(count / peak * 100), 2)
-        rows.append(
-            f'<div class="barrow"><div class="name" title="{html.escape(name)}">{html.escape(name)}</div>'
-            f'<div class="track"><div class="bar {series_cls}" style="width:{width}%" '
-            f'title="{html.escape(name)}: {count}"></div>'
-            f'<span class="val">{count:,}</span></div></div>'
-        )
-    return "".join(rows)
+    ordered = sorted(groups.items(), key=lambda kv: len(kv[1]), reverse=True)[:max_rows]
+    peak = max(len(v) for _, v in ordered)
+    rows = [
+        _drill_row(name, len(its), max(round(len(its) / peak * 100), 2),
+                   "s1", f"{prefix}-{i}", its)
+        for i, (name, its) in enumerate(ordered)
+    ]
+    return f'<div class="drill">{"".join(rows)}</div>'
 
 
-def _brand_chart(brands: dict[str, Counter], max_rows: int = 12) -> str:
-    """Own brands (blue) and competitors (aqua) on one magnitude scale."""
-    combined: list[tuple[str, int, str]] = [
-        (name, count, "s1") for name, count in brands["own"].items()
-    ] + [(name, count, "s2") for name, count in brands["competitors"].items()]
+def _brand_chart(items: list[dict], max_rows: int = 12) -> str:
+    """Own brands (blue) and competitors (aqua) on one magnitude scale, each
+    bar expandable to the stories mentioning that brand."""
+    own: dict[str, list[dict]] = {}
+    comp: dict[str, list[dict]] = {}
+    for it in items:
+        tags = it.get("tags", {})
+        for name in tags.get("own_brands", []):
+            own.setdefault(name, []).append(it)
+        for name in tags.get("competitors", []):
+            comp.setdefault(name, []).append(it)
+    combined = (
+        [(name, its, "s1") for name, its in own.items()]
+        + [(name, its, "s2") for name, its in comp.items()]
+    )
     if not combined:
         return '<p class="empty">No brand mentions this period.</p>'
-    combined.sort(key=lambda t: t[1], reverse=True)
+    combined.sort(key=lambda t: len(t[1]), reverse=True)
     combined = combined[:max_rows]
-    peak = max(c for _, c, _ in combined)
+    peak = max(len(its) for _, its, _ in combined)
     legend = (
         '<div class="legend">'
         '<span class="key"><span class="swatch s1"></span>EMS brands</span>'
         '<span class="key"><span class="swatch s2"></span>Competitors</span>'
         "</div>"
     )
+    rows = [
+        _drill_row(name, len(its), max(round(len(its) / peak * 100), 2),
+                   cls, f"brand-{i}", its)
+        for i, (name, its, cls) in enumerate(combined)
+    ]
+    return legend + f'<div class="drill">{"".join(rows)}</div>'
+
+
+def _drill_items(items: list[dict], limit: int = 40) -> str:
+    """Compact linked list of the stories behind a bar, most recent first,
+    each prefixed with a product/business dot when classified."""
+    ordered = sorted(
+        items,
+        key=lambda it: it.get("published") or it.get("collected_at") or "",
+        reverse=True,
+    )
     rows = []
-    for name, count, cls in combined:
-        width = max(round(count / peak * 100), 2)
+    for it in ordered[:limit]:
+        date = (it.get("published") or it.get("collected_at") or "")[:10]
+        nt = news_type_of(it)
+        dot = ""
+        if nt in ("Product", "Business"):
+            cls = "product" if nt == "Product" else "business"
+            dot = f'<span class="nt-dot {cls}" title="{nt}-level"></span>'
+        meta = " · ".join(x for x in (it["source"], date) if x)
         rows.append(
-            f'<div class="barrow"><div class="name" title="{html.escape(name)}">{html.escape(name)}</div>'
-            f'<div class="track"><div class="bar {cls}" style="width:{width}%" '
-            f'title="{html.escape(name)}: {count}"></div>'
-            f'<span class="val">{count:,}</span></div></div>'
+            f'<div class="drill-item">{dot}'
+            f'<a href="{html.escape(it["url"], quote=True)}">{html.escape(it["title"])}</a>'
+            f'<span class="di-meta">{html.escape(meta)}</span></div>'
         )
-    return legend + "".join(rows)
+    if len(ordered) > limit:
+        rows.append(f'<div class="di-more">+{len(ordered) - limit} more</div>')
+    return "".join(rows)
 
 
 def _sparkline(series: list[tuple[str, int]], width: int = 720, height: int = 64) -> str:

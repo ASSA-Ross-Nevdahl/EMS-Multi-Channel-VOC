@@ -203,6 +203,17 @@ def test_pipeline(tmp_path=None):
     assert "<strong>Test</strong>" in dash
     assert "Product-level news" in dash and "Business-level news" in dash
 
+    # drill-down: clickable bars + a hidden panel per bar, and every row's
+    # data-target must resolve to a panel id on the page.
+    assert 'class="barrow drill-row"' in dash
+    import re as _re
+    targets = _re.findall(r'data-target="([^"]+)"', dash)
+    assert targets, "no drillable bars rendered"
+    for pid in targets:
+        assert f'id="{pid}"' in dash, f"missing panel for {pid}"
+    # a category drill panel should contain a contributing story link
+    assert 'class="drill-panel"' in dash and 'class="drill-item"' in dash
+
     out = tmp_path / "dashboard.html"
     out.write_text(dash, encoding="utf-8")
     conn.close()
