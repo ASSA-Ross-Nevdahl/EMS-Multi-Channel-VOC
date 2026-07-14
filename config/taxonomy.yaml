@@ -110,10 +110,11 @@ brands:
     ASSA ABLOY (other):
       keywords: ["assa abloy", "sargent", "corbin russwin", "yale commercial", "norton rixson", "hid global"]
   competitors:
-    Von Duprin:
-      keywords: ["von duprin", "vonduprin"]
-    Schlage / Allegion:
-      keywords: ["schlage", "allegion", "locknetics", "lcn"]
+    # Allegion umbrella — Von Duprin, Schlage, LCN and Locknetics are all
+    # Allegion brands, consolidated into one bucket so they aren't counted
+    # as separate competitors.
+    Allegion (Schlage / Von Duprin / LCN):
+      keywords: ["allegion", "schlage", "von duprin", "vonduprin", "locknetics", "lcn"]
     dormakaba / RCI / BEST:
       keywords: ["dormakaba", "rutherford controls", "best access", "precision hardware"]
     SDC:

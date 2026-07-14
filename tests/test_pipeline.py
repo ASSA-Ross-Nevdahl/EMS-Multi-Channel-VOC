@@ -135,8 +135,10 @@ def test_pipeline(tmp_path=None):
     assert "Electric strikes" in hes.get("categories", []), hes
     assert "Installation & troubleshooting" in hes.get("themes", []), hes
 
+    # Von Duprin is consolidated under the Allegion umbrella competitor, and
+    # an item mentioning both "Von Duprin" and "Allegion" counts once.
     vd = by_url["https://example.com/vonduprin-launch"]["tags"]
-    assert "Von Duprin" in vd.get("competitors", []), vd
+    assert vd.get("competitors") == ["Allegion (Schlage / Von Duprin / LCN)"], vd
     assert "Exit devices & panic hardware" in vd.get("categories", []), vd
 
     sec = by_url["https://www.reddit.com/r/accesscontrol/2"]["tags"]
