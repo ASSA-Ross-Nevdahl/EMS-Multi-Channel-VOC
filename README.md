@@ -63,10 +63,14 @@ primary signal for product managers — the dashboard and digest lead with a
 
 Classification runs in two layers:
 
-1. **Keyword scoring** (`config/taxonomy.yaml` → `news_type:`) — always on,
-   transparent, editable. Each item is scored against the product and
-   business keyword lists; the higher score wins, ties/no-signal fall to
-   *Other*. Edit the lists and re-run `python -m voc analyze` to reclassify.
+1. **Keyword rule** (`config/taxonomy.yaml` → `news_type:`) — always on,
+   transparent, editable. A genuine business event (M&A / leadership /
+   earnings keyword) is decisive unless launch language outweighs it;
+   otherwise anything *about a product* — launch language **or** a tagged
+   product category (electric strike, maglock, exit device, …) — is
+   product-level; everything else is *Other*. A story doesn't have to
+   announce a launch to count as product — being about the product is
+   enough. Edit the lists and re-run `python -m voc analyze` to reclassify.
 2. **Claude refinement** (optional, when `ANTHROPIC_API_KEY` is set) — a
    single batched call re-labels the reporting-window items, sharpening the
    ambiguous cases the keywords can't decide (e.g. a company that makes

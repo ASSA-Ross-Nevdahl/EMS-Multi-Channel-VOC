@@ -167,6 +167,19 @@ def test_pipeline(tmp_path=None):
     # Reddit source is never classified as news
     assert classifier.classify("anything", None, {}, "reddit") is None
 
+    # A story ABOUT a product is product-level even without launch language,
+    # signalled by a tagged product category.
+    cat_only = {"categories": ["Exit devices & panic hardware"]}
+    assert classifier.classify(
+        "Why Allegion's Von Duprin 98/99 exit device dominates busy doors",
+        None, cat_only, "rss",
+    )[0] == "product"
+    # ...but a business event about a product-maker is still business.
+    assert classifier.classify(
+        "Firm that makes exit devices acquired by private equity",
+        None, cat_only, "rss",
+    )[0] == "business"
+
     # --- storage round-trip + dedupe
     conn = dbm.connect(db_path)
     assert dbm.upsert_items(conn, items) == len(items)

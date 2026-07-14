@@ -1,10 +1,10 @@
 # EMS VOC Radar — digest
 
-*Period: last 30 days, generated 2026-07-14 17:09 UTC*
+*Period: last 30 days, generated 2026-07-14 17:19 UTC*
 
 **183** items collected (+147 vs. prior 30 days): 0 Reddit discussions, 179 trade-press articles, 4 competitor page items.
 
-**News split:** 14 product-level (+10), 51 business-level (+41), 118 unclassified.
+**News split:** 16 product-level (+11), 52 business-level (+42), 115 unclassified.
 
 ## Product-level news (roadmap signal)
 
@@ -16,11 +16,13 @@
 - [Telaeris Announces XPressEntry Integration With LenelS2 Elements](https://www.sdmmag.com/articles/105587-telaeris-announces-xpressentry-integration-with-lenels2-elements) — SDM Magazine · 2026-07-08
 - [RecFaces Introduces Major Id-Time Update for Smarter Biometric Workforce Time Management](https://www.sdmmag.com/articles/105581-recfaces-introduces-major-id-time-update-for-smarter-biometric-workforce-time-management) — SDM Magazine · 2026-07-06
 - [Gallagher Security Launches Visitor Management Solution Powered by Kenai](https://www.sdmmag.com/articles/105580-gallagher-security-launches-visitor-management-solution-powered-by-kenai) — SDM Magazine · 2026-07-06
+- [Von Duprin 55 Series from Allegion plc - quiet exit device built for heavy doors - AD HOC NEWS](https://news.google.com/rss/articles/CBMiywFBVV95cUxOckdvb2hXTF9sNEJfR1E3TVRKdFlFS3Rnd1JlRTJjcExOZXJWLVN2bWhpaXFDRFY5ZkM4VVNNb0hhZGgwdXJ1ak5JUVIxTENjU0w4TG5CemF6S3JtTWtobG1zRlctXzFRaUc3cDBmSmdRVnZPbVpET1hQeVdJa3FzNmFvV0J3Mlo3VzdETEpiLVB1M2hoMWMtd0ZwYW8xZm9HWjJJMW1JUDA4SjVpWk8tWnBaMEtjc0RCV203djlwVjVHVF8ySVV2akVoVQ?oc=5) — Door hardware news (Google News) · 2026-07-06 — _Von Duprin, Schlage / Allegion; Exit devices & panic hardware_
 - [Epson Introduces ColorWorks Color Label & Badge Printer for Visitor Management & Low-Volume Applications](https://www.sdmmag.com/articles/105576-epson-introduces-colorworks-color-label-and-badge-printer-for-visitor-management-and-low-volume-applications) — SDM Magazine · 2026-07-02
 - [DMP Expands Professional VUE Camera Line With VUE Plus](https://www.sdmmag.com/articles/105569-dmp-expands-professional-vue-camera-line-with-vue-plus) — SDM Magazine · 2026-07-01
 - [Pimloc Launches Secure File Sharing to Streamline Release of Redacted Video](https://www.sdmmag.com/articles/105566-pimloc-launches-secure-file-sharing-to-streamline-release-of-redacted-video) — SDM Magazine · 2026-06-30
 - [Gunnebo Entrance Control Launches HiSec Nova Security Portal With New Detection and Control Technologies - Security Info Watch](https://news.google.com/rss/articles/CBMitgJBVV95cUxNUzlnWjNJOEtLUUhUN0ZlbFdsR29OaTNCMDBNRUxpMWdTUnNYQXdtV2dKdk0tNHBlbi1aRnJYMkhPakhlaHFNX3p6d29IZDhmZ2I2YldqRGxHbkM4SFhwdzFBY05ETmdoWE5BRUoteC1obHl3bkxET01yclVaUVJqZnZhLWlIQzdEVGpKZ201ZGUxSU5oT0daVmo0clZjQzlaTW5Fb0xvd29iUGdCandoX1JfeVRPR1FfNmx2RG1UVmVwalV2bU1xWjJYRHlHS24xY2FXUzAzSTlETXVySGhTcDNPQjYySWRhU0hDenFOS2NuVWhKaW43QTJjSGNQR2h6NEJHUWlscVZsRkxCa2tRUC11ZXpLWU5vcGdMeFdzTC1PZXRwSDhpWTBvM0VLTGFrZTMtcHpB?oc=5) — Security Info Watch · 2026-06-30
 - [Allegion unveils latest access control innovations - Security Journal Americas](https://news.google.com/rss/articles/CBMifEFVX3lxTE96Z3FVaXlHOHZYakNObDdDNXlSMWp6ZFhOblBOZjVfd1RZeWlIenVMV01WdTRzRXZTVklQOG11dURBOGVUaU00ZVFnTU9qSTNQS1RXUVVuYTh6c2tJV0psQmx4Sm9mazFHclY5VWNkaUNvYmlqejFORW1tZTM?oc=5) — Von Duprin / Allegion news (Google News) · 2026-06-24 — _Schlage / Allegion_
+- [Why Allegion’s Von Duprin 98/ 99 exit device quietly dominates busy doors - AD HOC NEWS](https://news.google.com/rss/articles/CBMiywFBVV95cUxNdkpfcGlZbnlHcXdaYWRHaFU1Y2c5S2ZjTDVjZnZKdG5YWS1fUURfS1dVUE1jeW9yMGhTaFgxU180WmdQX0RMRGNQUXBoaFNrOFJydGJIMlZBUlBLWVhXVUtsVWwxT3UxaXotcElWSGdBRUtXc2NCS0tDNjRmeWQ3ck5xRlRuUkwwcGw1VnYzd3NuVHU2MnhsaENIMDktVW4yVFQtSUVXejg5T0p0WGhLdWY0bXdSTThNbTcwVVNKU2lmYk1ueGdoUU5sdw?oc=5) — Door hardware news (Google News) · 2026-06-20 — _Von Duprin, Schlage / Allegion; Exit devices & panic hardware_
 - [Allegion unveils new access control solutions - SourceSecurity.com](https://news.google.com/rss/articles/CBMizgFBVV95cUxQZ0h3eWxQczd2YkJ5b2JaaGNacFFnbk4ybkEzb2szRk1iWVdIbnJQcmFzYVpuSWhHczBrSXNfNlBxZ2xONUQxRUlmS2tYeG1KMk9BanlSUy1XMUV0UHhtVmVvcmZCa0w5OUlzOFVjWlY5b3E1eU1DRE1aNlR0dnhjajZjY19tNWcyRmcxOERwYmxWQzM4ZVV6cUhyOVlJTGV4amtEbDczTWtaelZnbkdvZkd5NUpheVFfTzJ6TGRFTDVqQWRxd0g1Z19sMlZJZw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-06-16 — _Schlage / Allegion_
 
 ## Business-level news (competitive context)
@@ -34,12 +36,12 @@
 - [ESA Names Industry Research Center Advisory Council Members](https://www.securitysales.com/news/esa-names-industry-research-center-advisory-council-members/619667/) — Security Sales & Integration · 2026-07-09
 - [Pye-Barker Acquires ResponseTECH Inc. of Rockville, Maryland](https://www.securitysales.com/news/pye-barker-fire-safety-responsetech-acquisition/619639/) — Security Sales & Integration · 2026-07-08
 - [Hakimo Secures $12M Round to Reach $32M in Total Funding](https://www.sdmmag.com/articles/105590-hakimo-secures-12m-round-to-reach-32m-in-total-funding) — SDM Magazine · 2026-07-08
+- [Pye-Barker Fire & Safety Announces ResponseTECH Acquisition in Maryland](https://www.sdmmag.com/articles/105588-pye-barker-fire-and-safety-announces-responsetech-acquisition-in-maryland) — SDM Magazine · 2026-07-08
 - [Minuteman Security Acquires Performance Link Technologies](https://www.securitysales.com/news/minuteman-security-acquires-performance-link-technologies/619605/) — Security Sales & Integration · 2026-07-07
 - [Zeus Fire and Security Names New CEO; Elkins Shifts to Exec Chairman](https://www.securitysales.com/news/zeus-fire-security-elkins-cox-ceo/619591/) — Security Sales & Integration · 2026-07-07
 - [Zacks Research Has Bullish Forecast for Allegion Q1 Earnings - MarketBeat](https://news.google.com/rss/articles/CBMitAFBVV95cUxQSFBlZFRzQlg0ZHNuNW1uQnNvcTFsQ2U5ODlxc1RHOGM3SnFEWVBFSUxZWmk4eGNIQ0VUdGoyZEdEUzZVZEVZTXRMQlBzZDl3dUNiUFdzMV9MNHBUdzg3TWdDT2VXVDFXREhOXzNNSnRqQV9JZExXbWZBNVhhNjNuTTVSaVVvUWNiZ0J3TDVNZ1hiZmw2LXlBeHlrX29CNWR5QTFLTmxmbVZtTTRKaUg0azZ2dFU?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-07 — _Schlage / Allegion_
 - [Zeus Fire and Security Appoints Michael Cox CEO; Scott R. Elkins Named Executive Chairman](https://www.sdmmag.com/articles/105584-zeus-fire-and-security-appoints-michael-cox-ceo-scott-r-elkins-named-executive-chairman) — SDM Magazine · 2026-07-07
 - [Minuteman Security & Life Safety Expands Southeast Presence With Acquisition of Performance Link Technologies](https://www.sdmmag.com/articles/105585-minuteman-security-and-life-safety-expands-southeast-presence-with-acquisition-of-performance-link-technologies) — SDM Magazine · 2026-07-07
-- [Allegion's quarterly earnings preview: What you need to know - MSN](https://news.google.com/rss/articles/CBMiswFBVV95cUxNejNjN29nTHVuUmt3ejNlZDNDbFFuSjhNVmo0WjhaVXdFN0ZwcWxQT2FhZ25HQXpLWnhoSDBMZUluZnRPTUhHV1ViMldrcVhJTTFJS1hlVEkwY2twWExKTElEYWZ0WUJMcHpuYS05dkRYMTRtbGRHWDBZMGZVZ2pjbWpOTXVaVHE4ZEstcGRKY18yXzFBWElHb3NvejQ2TVROT2dlTDVNWElKX3BZNmZvRXRROA?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-07 — _Schlage / Allegion_
 
 ## Mentions by product category
 
