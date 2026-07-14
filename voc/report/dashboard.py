@@ -130,6 +130,12 @@ table.items a:hover { border-bottom-color: var(--series-1); }
 .nt-dot.product { background: var(--series-1); }
 .nt-dot.business { background: var(--text-muted); }
 .di-more { color: var(--text-muted); font-size: 12px; padding-top: 6px; }
+.scope-toggle { display: flex; align-items: center; gap: 8px; margin: 0 0 18px; flex-wrap: wrap; }
+.scope-label { color: var(--text-secondary); font-size: 13px; }
+.scope-btn { font: inherit; font-size: 13px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 6px; padding: 4px 12px; cursor: pointer; }
+.scope-btn:hover { color: var(--text-primary); }
+.scope-btn.active { background: var(--series-1); color: #fff; border-color: var(--series-1); }
+.scope-btn:focus-visible { outline: 2px solid var(--series-1); outline-offset: 2px; }
 .insights { font-size: 14px; }
 .insights h2 { font-size: 15px; margin: 16px 0 6px; }
 .insights h2:first-child { margin-top: 0; }
@@ -166,9 +172,23 @@ def render_dashboard(
         ]
     )
 
-    categories_chart = _drill_bar_chart(current, "categories", "cat")
-    themes_chart = _drill_bar_chart(current, "themes", "theme")
-    brand_chart = _brand_chart(current)
+    # "Product-level only" view for the toggle: drop business-noise items so
+    # the charts reflect roadmap-relevant coverage, not stock/M&A volume.
+    product_only = [it for it in current if news_type_of(it) == "Product"]
+    NO_PROD = "No product-level mentions this period."
+
+    categories_chart = _scoped_chart(
+        _drill_bar_chart(current, "categories", "cat"),
+        _drill_bar_chart(product_only, "categories", "catp", empty_msg=NO_PROD),
+    )
+    themes_chart = _scoped_chart(
+        _drill_bar_chart(current, "themes", "theme"),
+        _drill_bar_chart(product_only, "themes", "themep", empty_msg=NO_PROD),
+    )
+    brand_chart = _scoped_chart(
+        _brand_chart(current, prefix="brand"),
+        _brand_chart(product_only, prefix="brandp", empty_msg=NO_PROD),
+    )
     spark = _sparkline(weekly_volume(all_items))
     insights_html = _md_to_html(insights_md) if insights_md else ""
     product_table = _items_table(news_items(current, "Product", limit=25))
@@ -210,6 +230,12 @@ def render_dashboard(
 <div class="tiles">{tiles}</div>
 
 {insights_card}
+
+<div class="scope-toggle" role="group" aria-label="Chart scope">
+  <span class="scope-label">Category, theme &amp; brand charts:</span>
+  <button type="button" class="scope-btn active" data-scope="all" aria-pressed="true">All news</button>
+  <button type="button" class="scope-btn" data-scope="product" aria-pressed="false">Product-level only</button>
+</div>
 
 <div class="grid2">
   <section class="card">
@@ -273,6 +299,24 @@ def render_dashboard(
       if (e.key === 'Enter' || e.key === ' ') {{ e.preventDefault(); toggle(row); }}
     }});
   }});
+
+  function setScope(scope) {{
+    document.querySelectorAll('.chart-scope').forEach(function (el) {{
+      if (el.getAttribute('data-scope') === scope) el.removeAttribute('hidden');
+      else el.setAttribute('hidden', '');
+    }});
+    document.querySelectorAll('.scope-btn').forEach(function (b) {{
+      var on = b.getAttribute('data-scope') === scope;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    }});
+    // collapse any open drill panels so the two scopes don't cross over
+    document.querySelectorAll('.drill-panel').forEach(function (p) {{ p.setAttribute('hidden', ''); }});
+    document.querySelectorAll('.drill-row').forEach(function (r) {{ r.setAttribute('aria-expanded', 'false'); }});
+  }}
+  document.querySelectorAll('.scope-btn').forEach(function (b) {{
+    b.addEventListener('click', function () {{ setScope(b.getAttribute('data-scope')); }});
+  }});
 }})();
 </script>
 </body>
@@ -308,14 +352,15 @@ def _drill_row(name: str, count: int, width: int, cls: str, pid: str,
 
 
 def _drill_bar_chart(items: list[dict], tag_key: str, prefix: str,
-                     max_rows: int = 10) -> str:
+                     max_rows: int = 10,
+                     empty_msg: str = "No tagged mentions this period.") -> str:
     """Bar chart whose bars expand to list the items behind each count."""
     groups: dict[str, list[dict]] = {}
     for it in items:
         for name in it.get("tags", {}).get(tag_key, []):
             groups.setdefault(name, []).append(it)
     if not groups:
-        return '<p class="empty">No tagged mentions this period.</p>'
+        return f'<p class="empty">{html.escape(empty_msg)}</p>'
     ordered = sorted(groups.items(), key=lambda kv: len(kv[1]), reverse=True)[:max_rows]
     peak = max(len(v) for _, v in ordered)
     rows = [
@@ -326,7 +371,8 @@ def _drill_bar_chart(items: list[dict], tag_key: str, prefix: str,
     return f'<div class="drill">{"".join(rows)}</div>'
 
 
-def _brand_chart(items: list[dict], max_rows: int = 12) -> str:
+def _brand_chart(items: list[dict], prefix: str = "brand", max_rows: int = 12,
+                 empty_msg: str = "No brand mentions this period.") -> str:
     """Own brands (blue) and competitors (aqua) on one magnitude scale, each
     bar expandable to the stories mentioning that brand."""
     own: dict[str, list[dict]] = {}
@@ -342,7 +388,7 @@ def _brand_chart(items: list[dict], max_rows: int = 12) -> str:
         + [(name, its, "s2") for name, its in comp.items()]
     )
     if not combined:
-        return '<p class="empty">No brand mentions this period.</p>'
+        return f'<p class="empty">{html.escape(empty_msg)}</p>'
     combined.sort(key=lambda t: len(t[1]), reverse=True)
     combined = combined[:max_rows]
     peak = max(len(its) for _, its, _ in combined)
@@ -354,10 +400,19 @@ def _brand_chart(items: list[dict], max_rows: int = 12) -> str:
     )
     rows = [
         _drill_row(name, len(its), max(round(len(its) / peak * 100), 2),
-                   cls, f"brand-{i}", its)
+                   cls, f"{prefix}-{i}", its)
         for i, (name, its, cls) in enumerate(combined)
     ]
     return legend + f'<div class="drill">{"".join(rows)}</div>'
+
+
+def _scoped_chart(all_html: str, product_html: str) -> str:
+    """Wrap the all-news and product-only variants of a chart; the toggle
+    controls which is visible."""
+    return (
+        f'<div class="chart-scope" data-scope="all">{all_html}</div>'
+        f'<div class="chart-scope" data-scope="product" hidden>{product_html}</div>'
+    )
 
 
 def _drill_items(items: list[dict], limit: int = 40) -> str:

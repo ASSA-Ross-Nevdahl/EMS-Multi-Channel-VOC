@@ -75,6 +75,12 @@ Classification runs in two layers:
 Reddit discussion is installer voice-of-customer, not news, so it is left
 unclassified and surfaces under *Voice of the field* instead.
 
+On the dashboard, the category / theme / brand bar charts are clickable —
+click any bar to expand the contributing stories with links — and a
+**"Product-level only"** toggle above them recomputes those charts from
+just the product-classified items, so brand share of voice reflects
+roadmap-relevant coverage instead of stock/earnings volume.
+
 ## Running it
 
 ```bash
