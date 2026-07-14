@@ -150,6 +150,14 @@ def test_pipeline(tmp_path=None):
         "competitors", []
     )
 
+    # newly added EMS own brands are recognized
+    assert "Control iD" in tagger.tag(
+        "Control iD releases new facial recognition reader"
+    ).get("own_brands", [])
+    assert "LifeSafety Power" in tagger.tag(
+        "LifeSafety Power announces new FlexPower supply", None
+    ).get("own_brands", [])
+
     # --- product vs business classification
     vd_launch = by_url["https://example.com/vonduprin-launch"]["tags"]
     assert vd_launch.get("news_type") == ["Product"], vd_launch  # "launches"

@@ -2,7 +2,7 @@
 
 Multi-channel voice-of-customer monitoring for the **ASSA ABLOY
 Electromechanical Solutions Group** (HES · Securitron · Alarm Controls ·
-Adams Rite).
+Adams Rite · Control iD · LifeSafety Power).
 
 The tool regularly collects publicly available information about commercial
 access control and door hardware — trade press, installer/integrator
@@ -49,6 +49,10 @@ config/taxonomy.yaml ──▶ keyword tagger (categories · brands · themes)
   network the public JSON listings work without them.
 - **Web** — competitor news pages (Allegion newsroom, Camden) scraped with
   per-source CSS selectors.
+- **Own-brand monitoring** — Google News RSS searches for each EMS brand
+  (HES, Securitron, Alarm Controls, Adams Rite, Control iD, LifeSafety
+  Power) so the tool actively pulls their coverage rather than relying on
+  incidental mentions in the general feeds.
 
 Every source is fetched independently — one broken feed never aborts a run.
 

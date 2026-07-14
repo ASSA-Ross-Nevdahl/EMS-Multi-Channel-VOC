@@ -79,7 +79,11 @@ def cmd_collect(conn, args) -> None:
     tagger = Tagger(taxonomy)
     classifier = NewsClassifier(taxonomy)
 
-    feeds = sources["rss"] + sources["competitor_news_rss"]
+    feeds = (
+        sources["rss"]
+        + sources["competitor_news_rss"]
+        + sources["own_brand_news_rss"]
+    )
     items: list[dict] = []
     log.info("collecting %d RSS feeds…", len(feeds))
     items += collect_rss(feeds)

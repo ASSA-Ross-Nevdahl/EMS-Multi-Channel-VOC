@@ -58,3 +58,21 @@ competitor_news_rss:
     url: "https://news.google.com/rss/search?q=%22Command%20Access%20Technologies%22&hl=en-US&gl=US&ceid=US:en"
   - name: Von Duprin / Allegion news (Google News)
     url: "https://news.google.com/rss/search?q=%22Von%20Duprin%22%20OR%20%22Allegion%22&hl=en-US&gl=US&ceid=US:en"
+
+# EMS own-brand monitoring — Google News RSS searches so the tool actively
+# pulls coverage of our own brands, not just incidental mentions in the
+# general trade feeds. Relevance/relevance-tagging filters the noisy ones
+# (HES, Alarm Controls) downstream.
+own_brand_news_rss:
+  - name: HES news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Hanchett%20Entry%20Systems%22%20OR%20%28%22HES%22%20%22electric%20strike%22%29&hl=en-US&gl=US&ceid=US:en"
+  - name: Securitron news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Securitron%22&hl=en-US&gl=US&ceid=US:en"
+  - name: Alarm Controls news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Alarm%20Controls%22%20%28door%20OR%20access%20OR%20maglock%29&hl=en-US&gl=US&ceid=US:en"
+  - name: Adams Rite news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Adams%20Rite%22&hl=en-US&gl=US&ceid=US:en"
+  - name: Control iD news (Google News)
+    url: "https://news.google.com/rss/search?q=%22Control%20iD%22%20%28access%20OR%20biometric%20OR%20reader%29&hl=en-US&gl=US&ceid=US:en"
+  - name: LifeSafety Power news (Google News)
+    url: "https://news.google.com/rss/search?q=%22LifeSafety%20Power%22%20OR%20%22Life%20Safety%20Power%22&hl=en-US&gl=US&ceid=US:en"

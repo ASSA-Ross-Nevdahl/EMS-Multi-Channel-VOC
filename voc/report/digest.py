@@ -67,7 +67,8 @@ def render_digest(
     brands_now = brand_mentions(current)
     brands_prev = brand_mentions(previous)
     lines += _count_section(
-        "Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite)",
+        "Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite / "
+        "Control iD / LifeSafety Power)",
         brands_now["own"],
         brands_prev["own"],
     )

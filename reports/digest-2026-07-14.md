@@ -1,6 +1,6 @@
 # EMS VOC Radar — digest
 
-*Period: last 30 days, generated 2026-07-14 20:53 UTC*
+*Period: last 30 days, generated 2026-07-14 22:08 UTC*
 
 **183** items collected (+147 vs. prior 30 days): 0 Reddit discussions, 179 trade-press articles, 4 competitor page items.
 
@@ -50,7 +50,7 @@
 | Exit devices & panic hardware | 2 | +1 |
 | Electric strikes | 1 | +1 |
 
-## Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite)
+## Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite / Control iD / LifeSafety Power)
 
 _No mentions this period._
 

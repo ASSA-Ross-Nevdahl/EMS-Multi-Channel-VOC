@@ -223,7 +223,7 @@ def render_dashboard(
 <div class="wrap">
 <header>
   <h1>EMS VOC Radar</h1>
-  <p>Access control &amp; door hardware — voice of customer for HES · Securitron · Alarm Controls · Adams Rite<br>
+  <p>Access control &amp; door hardware — voice of customer for HES · Securitron · Alarm Controls · Adams Rite · Control iD · LifeSafety Power<br>
   Last {days} days · generated {now:%Y-%m-%d %H:%M} UTC · deltas vs. prior {days} days</p>
 </header>
 

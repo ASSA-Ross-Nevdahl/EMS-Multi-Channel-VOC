@@ -105,6 +105,12 @@ brands:
       keywords: ["alarm controls"]
     Adams Rite:
       keywords: ["adams rite", "adamsrite"]
+    Control iD:
+      # "control id" (two words) can occasionally match a generic "access
+      # control ID" phrase; drop it if it over-triggers.
+      keywords: ["control id", "controlid", "control-id"]
+    LifeSafety Power:
+      keywords: ["lifesafety power", "life safety power", "lifesafetypower"]
   # Sibling ASSA ABLOY brands — tracked separately from competitors.
   assa_abloy_other:
     ASSA ABLOY (other):
