@@ -226,6 +226,11 @@ def test_pipeline(tmp_path=None):
     assert "<strong>Test</strong>" in dash
     assert "Product-level news" in dash and "Business-level news" in dash
 
+    # product-news category filter: a chip row plus rows carrying data-cat
+    assert 'class="cat-filter"' in dash
+    assert 'data-category="__all__"' in dash
+    assert "data-cat=" in dash
+
     # drill-down: clickable bars + a hidden panel per bar, and every row's
     # data-target must resolve to a panel id on the page.
     assert 'class="barrow drill-row"' in dash

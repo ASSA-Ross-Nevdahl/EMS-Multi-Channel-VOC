@@ -87,7 +87,10 @@ On the dashboard, the category / theme / brand bar charts are clickable —
 click any bar to expand the contributing stories with links — and a
 **"Product-level only"** toggle above them recomputes those charts from
 just the product-classified items, so brand share of voice reflects
-roadmap-relevant coverage instead of stock/earnings volume.
+roadmap-relevant coverage instead of stock/earnings volume. The
+**Product-level news** section also has a category filter chip row (the
+same product categories as the chart above) to narrow it to, say, just
+exit-device or electric-strike news.
 
 ## Running it
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import html
 import re
+from collections import Counter
 from datetime import datetime, timezone
 
 from ..analysis import (
@@ -136,6 +137,12 @@ table.items a:hover { border-bottom-color: var(--series-1); }
 .scope-btn:hover { color: var(--text-primary); }
 .scope-btn.active { background: var(--series-1); color: #fff; border-color: var(--series-1); }
 .scope-btn:focus-visible { outline: 2px solid var(--series-1); outline-offset: 2px; }
+.cat-filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.cat-btn { font: inherit; font-size: 12.5px; color: var(--text-secondary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 3px 11px; cursor: pointer; }
+.cat-btn:hover { color: var(--text-primary); }
+.cat-btn.active { background: var(--series-1); color: #fff; border-color: var(--series-1); }
+.cat-btn:focus-visible { outline: 2px solid var(--series-1); outline-offset: 2px; }
+.prodnews .empty-filter { color: var(--text-muted); font-size: 13px; padding: 8px 0; }
 .insights { font-size: 14px; }
 .insights h2 { font-size: 15px; margin: 16px 0 6px; }
 .insights h2:first-child { margin-top: 0; }
@@ -191,7 +198,7 @@ def render_dashboard(
     )
     spark = _sparkline(weekly_volume(all_items))
     insights_html = _md_to_html(insights_md) if insights_md else ""
-    product_table = _items_table(news_items(current, "Product", limit=25))
+    product_block = _product_news_block(news_items(current, "Product", limit=50))
     business_table = _items_table(news_items(current, "Business", limit=20))
     reddit_notable = [it for it in notable_items(current, limit=8)
                       if it["source_type"] == "reddit"]
@@ -264,8 +271,8 @@ def render_dashboard(
 
 <section class="card">
   <h2>Product-level news <span class="pill s1">roadmap signal</span></h2>
-  <p class="sub">New/updated products, features, specs, certifications, recalls — most recent first</p>
-  {product_table}
+  <p class="sub">New/updated products, features, specs, certifications, recalls — most recent first · filter by category</p>
+  {product_block}
 </section>
 
 <section class="card">
@@ -316,6 +323,35 @@ def render_dashboard(
   }}
   document.querySelectorAll('.scope-btn').forEach(function (b) {{
     b.addEventListener('click', function () {{ setScope(b.getAttribute('data-scope')); }});
+  }});
+
+  // Category filter on the Product-level news table
+  document.querySelectorAll('.cat-filter').forEach(function (bar) {{
+    var block = bar.closest('.prodnews');
+    var body = block.querySelector('table.items tbody');
+    var empty = document.createElement('p');
+    empty.className = 'empty-filter';
+    empty.textContent = 'No product-level news in this category this period.';
+    empty.hidden = true;
+    block.appendChild(empty);
+    bar.querySelectorAll('.cat-btn').forEach(function (btn) {{
+      btn.addEventListener('click', function () {{
+        var cat = btn.getAttribute('data-category');
+        bar.querySelectorAll('.cat-btn').forEach(function (b) {{
+          var on = b === btn;
+          b.classList.toggle('active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        }});
+        var shown = 0;
+        body.querySelectorAll('tr').forEach(function (tr) {{
+          var cats = (tr.getAttribute('data-cat') || '').split('|');
+          var show = cat === '__all__' || cats.indexOf(cat) !== -1;
+          tr.style.display = show ? '' : 'none';
+          if (show) shown++;
+        }});
+        empty.hidden = shown !== 0;
+      }});
+    }});
   }});
 }})();
 </script>
@@ -471,7 +507,7 @@ def _sparkline(series: list[tuple[str, int]], width: int = 720, height: int = 64
     )
 
 
-def _items_table(items: list[dict]) -> str:
+def _items_table(items: list[dict], cat_data: bool = False) -> str:
     if not items:
         return '<p class="empty">Nothing tagged this period.</p>'
     # Only show the engagement column when at least one row has engagement
@@ -496,8 +532,13 @@ def _items_table(items: list[dict]) -> str:
                 else "—"
             )
             engagement_cell = f'<td class="num">{eng}</td>'
+        # category filter hook: pipe-joined category labels on the row
+        cat_attr = ""
+        if cat_data:
+            cats = "|".join(tags.get("categories", []))
+            cat_attr = f' data-cat="{html.escape(cats, quote=True)}"'
         rows.append(
-            "<tr>"
+            f"<tr{cat_attr}>"
             f'<td><a href="{html.escape(it["url"], quote=True)}">{html.escape(it["title"])}</a>'
             f"<div>{tag_html}</div></td>"
             f"<td>{html.escape(it['source'])}</td>"
@@ -511,6 +552,34 @@ def _items_table(items: list[dict]) -> str:
         f"<th>Item</th><th>Source</th>{eng_header}<th>Date</th>"
         "</tr></thead><tbody>" + "".join(rows) + "</tbody></table>"
     )
+
+
+def _product_news_block(items: list[dict]) -> str:
+    """Product-level news table with a category filter chip row (same
+    categories as the 'Mentions by product category' chart)."""
+    if not items:
+        return '<p class="empty">No product-level news this period.</p>'
+    cat_counts: Counter = Counter()
+    for it in items:
+        for c in it.get("tags", {}).get("categories", []):
+            cat_counts[c] += 1
+    buttons = [
+        f'<button type="button" class="cat-btn active" data-category="__all__" '
+        f'aria-pressed="true">All ({len(items)})</button>'
+    ]
+    for name, cnt in cat_counts.most_common():
+        buttons.append(
+            f'<button type="button" class="cat-btn" '
+            f'data-category="{html.escape(name, quote=True)}" aria-pressed="false">'
+            f'{html.escape(name)} ({cnt})</button>'
+        )
+    filter_bar = (
+        '<div class="cat-filter" role="group" '
+        'aria-label="Filter product news by category">'
+        + "".join(buttons)
+        + "</div>"
+    )
+    return f'<div class="prodnews">{filter_bar}{_items_table(items, cat_data=True)}</div>'
 
 
 def _md_to_html(md: str) -> str:
