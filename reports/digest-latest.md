@@ -1,13 +1,14 @@
 # EMS VOC Radar — digest
 
-*Period: last 30 days, generated 2026-07-15 17:39 UTC*
+*Period: last 30 days, generated 2026-07-15 18:01 UTC*
 
-**217** items collected (+180 vs. prior 30 days): 0 Reddit discussions, 213 trade-press articles, 4 competitor page items.
+**237** items collected (+198 vs. prior 30 days): 0 Reddit discussions, 233 trade-press articles, 4 competitor page items.
 
-**News split:** 25 product-level (+20), 58 business-level (+47), 134 unclassified.
+**News split:** 26 product-level (+21), 62 business-level (+50), 149 unclassified.
 
 ## Product-level news (roadmap signal)
 
+- [More Competition from Kiosk Provider? KeyMe Launches CopyKeys.com - Locksmith Ledger](https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM0lLVWRHRWlwWHJqd2pMZUxOb1M2Nmgxb1NKRW84cUpRMFhkaDM4Vy11cWt4QlJHLWI1UEtBcmNwVDh4aVdpQ3FxcDVnWTJTR1FoMHVXNXZXbDNuSjl5bXJkbTZRcThaS2g1aVdIZWl6QlllWGRaSk16bHZBSWNBUnA4X1l6dS0yNmFF?oc=5) — Locksmith Ledger · 2026-07-15
 - [Eluviant Launches Next-Generation Generative AI Model for Enterprise Video Surveillance](https://www.sdmmag.com/articles/105610-eluviant-launches-next-generation-generative-ai-model-for-enterprise-video-surveillance) — SDM Magazine · 2026-07-14
 - [Security Industry Association Reveals the First Look at the SNG 2026 Agenda](https://www.sdmmag.com/articles/105609-security-industry-association-reveals-the-first-look-at-the-sng-2026-agenda) — SDM Magazine · 2026-07-14
 - [ProdataKey Launches Entrio Integration to Streamline Cloud-Based Visitor Access - Security Info Watch](https://news.google.com/rss/articles/CBMiuwJBVV95cUxQdFR5eHlVYUM4R0ZVOU9yaDUtN1QzUUJzemhyQ1JGcUJKU2lOUEttb3dETktNTmNtS2JDdllpTVJaWk1LVXpaME56UVotcUJGNEdnNGQtc2pOdGJiUmZ4d2RmZk9aUTdBSWp3b0k1cEI3RlJoZGhNWEhXRlJiMnREQTBYNnItRkRoTG5HV1JYZWJFelhaT25jRjVQamsxMGp0LTBndkU2bVdmMGxvYlduenZrVkl0ZFIyN3huZFo0ZmdYemxBTzEzSEdZc0V4NDk4d2NMbUFBVE44dkd1eGd2WnZFV0F0dGZ1RWszUXhtODRUSmktRWQyUjFJWmhtMk1manhscVp2RldWMEd5Zmt3cFV4N3JBQVRYVzBZV2ktZWc5UlZ6c3hUSUJnM3JqWDBuZXdXUkpXQlUwWDQ?oc=5) — Security Info Watch · 2026-07-14
@@ -32,10 +33,12 @@
 - [USB Desktop MIFARE RFID Card Reader – 13.56MHz For Access Control, ID Cards, And NFC Tags - santoandre.biz](https://news.google.com/rss/articles/CBMijAFBVV95cUxQOXVHOHZBcFFfNWcxdmdScWVwZEFlam4yaDJTQl93dUw4ZEZuSFNObkM1cDNWTkMzUDkzcUFMSDRQYkducVJDbGUyM1BXN1ByX0laZnZPUTdlSU1iUG16UW5KSHE5UVIwVm9RV2JXM1BMVkQtYWM5MVBEUGgxOFN4OTB0ZmhKQVZKaEVqRg?oc=5) — Control iD news (Google News) · 2026-06-25 — _Controllers, readers & credentials_
 - [Allegion unveils latest access control innovations - Security Journal Americas](https://news.google.com/rss/articles/CBMifEFVX3lxTE96Z3FVaXlHOHZYakNObDdDNXlSMWp6ZFhOblBOZjVfd1RZeWlIenVMV01WdTRzRXZTVklQOG11dURBOGVUaU00ZVFnTU9qSTNQS1RXUVVuYTh6c2tJV0psQmx4Sm9mazFHclY5VWNkaUNvYmlqejFORW1tZTM?oc=5) — Von Duprin / Allegion news (Google News) · 2026-06-24 — _Allegion (Schlage / Von Duprin / LCN)_
 - [Why Allegion’s Von Duprin 98/ 99 exit device quietly dominates busy doors - AD HOC NEWS](https://news.google.com/rss/articles/CBMiywFBVV95cUxNdkpfcGlZbnlHcXdaYWRHaFU1Y2c5S2ZjTDVjZnZKdG5YWS1fUURfS1dVUE1jeW9yMGhTaFgxU180WmdQX0RMRGNQUXBoaFNrOFJydGJIMlZBUlBLWVhXVUtsVWwxT3UxaXotcElWSGdBRUtXc2NCS0tDNjRmeWQ3ck5xRlRuUkwwcGw1VnYzd3NuVHU2MnhsaENIMDktVW4yVFQtSUVXejg5T0p0WGhLdWY0bXdSTThNbTcwVVNKU2lmYk1ueGdoUU5sdw?oc=5) — Door hardware news (Google News) · 2026-06-20 — _Allegion (Schlage / Von Duprin / LCN); Exit devices & panic hardware_
-- [Allegion unveils new access control solutions - SourceSecurity.com](https://news.google.com/rss/articles/CBMizgFBVV95cUxQZ0h3eWxQczd2YkJ5b2JaaGNacFFnbk4ybkEzb2szRk1iWVdIbnJQcmFzYVpuSWhHczBrSXNfNlBxZ2xONUQxRUlmS2tYeG1KMk9BanlSUy1XMUV0UHhtVmVvcmZCa0w5OUlzOFVjWlY5b3E1eU1DRE1aNlR0dnhjajZjY19tNWcyRmcxOERwYmxWQzM4ZVV6cUhyOVlJTGV4amtEbDczTWtaelZnbkdvZkd5NUpheVFfTzJ6TGRFTDVqQWRxd0g1Z19sMlZJZw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-06-16 — _Allegion (Schlage / Von Duprin / LCN)_
 
 ## Business-level news (competitive context)
 
+- [DMP Names Ludi Bouwer Director of Sales, Latin America & Zach Chambers Director of Sales, Southeast](https://www.sdmmag.com/articles/105615-dmp-names-ludi-bouwer-director-of-sales-latin-america-and-zach-chambers-director-of-sales-southeast) — SDM Magazine · 2026-07-14
+- [Pye-Barker Fire & Safety Names Peter Robbins President of Commercial Services](https://www.sdmmag.com/articles/105614-pye-barker-fire-and-safety-names-peter-robbins-president-of-commercial-services) — SDM Magazine · 2026-07-14
+- [Vector Security Hires Brandon Reich as Chief Product and Solutions Officer](https://www.sdmmag.com/articles/105612-vector-security-hires-brandon-reich-as-chief-product-and-solutions-officer) — SDM Magazine · 2026-07-14
 - [PSA Network Adds Deatherage and Keller to Board of Directors](https://www.securitysales.com/news/psa-network-travis-deatherage-pete-keller-board-of-directors/619757/) — Security Sales & Integration · 2026-07-14
 - [Add Your Voice to CI+SSI’s Command-and-Control Survey](https://www.securitysales.com/news/command-control-survey-closes-july-24/619750/) — Security Sales & Integration · 2026-07-14
 - [Michael Matta, CEO and Co-Founder, Solink: Best Advice](https://www.securitysales.com/insights/michael-matta-solink-best-security-advice/619733/) — Security Sales & Integration · 2026-07-14
@@ -48,9 +51,6 @@
 - [Unison Risk Advisors Partners With ZeroEyes to Offer AI-Driven Firearm Detection Technology](https://www.sdmmag.com/articles/105599-unison-risk-advisors-partners-with-zeroeyes-to-offer-ai-driven-firearm-detection-technology) — SDM Magazine · 2026-07-10
 - [MSA Safety Completes Acquisition of Autronica Fire and Security](https://www.sdmmag.com/articles/105597-msa-safety-completes-acquisition-of-autronica-fire-and-security) — SDM Magazine · 2026-07-10
 - [ESA Announces Industry Research Center Advisory Council to Help Shape the Future of Security Industry Intelligence](https://www.sdmmag.com/articles/105596-esa-announces-industry-research-center-advisory-council-to-help-shape-the-future-of-security-industry-intelligence) — SDM Magazine · 2026-07-10
-- [ESA Names Industry Research Center Advisory Council Members](https://www.securitysales.com/news/esa-names-industry-research-center-advisory-council-members/619667/) — Security Sales & Integration · 2026-07-09
-- [Channel Championz Appoints Roy Miller as Special Projects Director - Security Info Watch](https://news.google.com/rss/articles/CBMi8AFBVV95cUxPZTI0NmNodnJ2ZTdqeDJFb1B3a29uZFlPVGR0VFpLOXc4VjJGSjFaV2FrQ1BaZUdPY21sdDVPRUFxTDZPLXBnandpVzZwZGRpODRrMDkzMGt1ZDQ0VXhKTEhKY1ZpbVBoc1czQTJ4SlpEV3JzUGZmTjluY283aHplczNHOEJNQ1E2TE9vM2J0a3BNV2V3T0pQZVphY1hncFhTazJQSlZzQk8wYWRqVmgtOTBVbkFJNUoxZnpIWEJWMW5yMnpMdmVQTnN3TmVxb3F0YXFFcU1vS2pEaUtzc0ktOFBxRGVreTkzR3U0dVQtaXc?oc=5) — Security Info Watch · 2026-07-08
-- [Pye-Barker Acquires ResponseTECH Inc. of Rockville, Maryland](https://www.securitysales.com/news/pye-barker-fire-safety-responsetech-acquisition/619639/) — Security Sales & Integration · 2026-07-08
 
 ## Mentions by product category
 
@@ -68,23 +68,43 @@ _No mentions this period._
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Allegion (Schlage / Von Duprin / LCN) | 63 | +40 |
-| dormakaba / RCI / BEST | 34 | +22 |
+| Allegion (Schlage / Von Duprin / LCN) | 63 | +39 |
+| dormakaba / RCI / BEST | 34 | +21 |
 | Alarm Lock / Napco | 1 | +1 |
 
 ## Themes
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Wireless & smart access | 49 | +48 |
-| Codes & life safety | 5 | +5 |
-| Installation & troubleshooting | 4 | +4 |
+| Wireless & smart access | 51 | +50 |
+| Codes & life safety | 6 | +6 |
+| Installation & troubleshooting | 4 | +3 |
 | Pricing & availability | 3 | 0 |
 | Reliability & quality | 2 | +2 |
 | Compatibility & retrofit | 1 | +1 |
 
 ## Notable items
 
+- [Interface Systems Report Reveals What Drives Restaurant Security](https://www.securitysales.com/news/interface-systems-report-restaurant-security/619783/) — Security Sales & Integration · 2026-07-15
+  - tags: Other; Wireless & smart access
+- [Video Surveillance is Everywhere, But Myriad Opportunities Remain](https://www.securitysales.com/news/video-surveillance-ubiquitous-myriad-opportunities-remain/619773/) — Security Sales & Integration · 2026-07-15
+  - tags: Other; Wireless & smart access
+- [Logical Remote Video Notifications & Monitoring](https://www.sdmmag.com/articles/105616-logical-remote-video-notifications-and-monitoring) — SDM Magazine · 2026-07-15
+  - tags: Other
+- [2 reasons to like ALLE and 1 to stay skeptical - MSN](https://news.google.com/rss/articles/CBMirgFBVV95cUxNcWlIQUtZak4wX0plMnhZdXhwc2swZ2FHWkNsSjRFQTJ5a1JaclVOQlJ6WWdvdnVNSkhjcDNPZ19DYk9SeGk1cHVXUUlJc2xzVklOUHRVR0dFNVdiSEh5b0dDVmJkc2UtZFdtV091aDlRQmFreGRyOGstZDFBM0lPekZvTFZ5SFVuV2Y0R3NFSVM5VzdyU29NZlNtT2JsZ1RxVHpYYU95Ri1DN2dYVkE?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-15
+  - tags: Other
+- [More Competition from Kiosk Provider? KeyMe Launches CopyKeys.com - Locksmith Ledger](https://news.google.com/rss/articles/CBMiiwFBVV95cUxOM0lLVWRHRWlwWHJqd2pMZUxOb1M2Nmgxb1NKRW84cUpRMFhkaDM4Vy11cWt4QlJHLWI1UEtBcmNwVDh4aVdpQ3FxcDVnWTJTR1FoMHVXNXZXbDNuSjl5bXJkbTZRcThaS2g1aVdIZWl6QlllWGRaSk16bHZBSWNBUnA4X1l6dS0yNmFF?oc=5) — Locksmith Ledger · 2026-07-15
+  - tags: Product
+- [Galeria de Biometric Boarding Gates in Heathrow Airport - 1 - ArchDaily](https://news.google.com/rss/articles/CBMi_gFBVV95cUxNbXI1UXR4NVRUWkU1a3dTRm5UNnItS2xyX3RDNDRjX2hhYzNmMTYxQVI5QXRQcTYwR2lORGw1cHNIY09mWHVxZlh4NzhQV1lBTHZjdTFyTWU1TmhFWENmVnpfTTdrOEVUWFFXaFZ4Q1B5aXFiU1NrdFMwVlIzX3Q3Z0N2SzlERXpNa00tandZSnVMSjBPQnctNjM1S05MNFhKLXBlWkRJMXdWdUFzRzhYZ3ktSUZFdi03ZlVUMEtXYXh1ZUJDbU03UEtqNTJJRXRJSWFOVXctaXdiUGR5OXdJcmwyVl80SDYyODEwOUUteEZpZnNWLXRHaVZ2TjFEZw?oc=5) — dormakaba news (Google News) · 2026-07-15
+  - tags: Other
+- [DMP Names Ludi Bouwer Director of Sales, Latin America & Zach Chambers Director of Sales, Southeast](https://www.sdmmag.com/articles/105615-dmp-names-ludi-bouwer-director-of-sales-latin-america-and-zach-chambers-director-of-sales-southeast) — SDM Magazine · 2026-07-14
+  - tags: Business
+- [Pye-Barker Fire & Safety Names Peter Robbins President of Commercial Services](https://www.sdmmag.com/articles/105614-pye-barker-fire-and-safety-names-peter-robbins-president-of-commercial-services) — SDM Magazine · 2026-07-14
+  - tags: Business
+- [Security Industry Association Welcomes Randy Clark as Director of Member Services](https://www.sdmmag.com/articles/105613-security-industry-association-welcomes-randy-clark-as-director-of-member-services) — SDM Magazine · 2026-07-14
+  - tags: Other
+- [Vector Security Hires Brandon Reich as Chief Product and Solutions Officer](https://www.sdmmag.com/articles/105612-vector-security-hires-brandon-reich-as-chief-product-and-solutions-officer) — SDM Magazine · 2026-07-14
+  - tags: Business
 - [What Multi-Site Rollouts Teach Security Integrators About Process, Procurement and Project Control](https://www.securitysales.com/insights/multi-site-security-rollouts-process-procurement-project-control/619767/) — Security Sales & Integration · 2026-07-14
   - tags: Other; Wireless & smart access
 - [PSA Network Adds Deatherage and Keller to Board of Directors](https://www.securitysales.com/news/psa-network-travis-deatherage-pete-keller-board-of-directors/619757/) — Security Sales & Integration · 2026-07-14
@@ -95,23 +115,3 @@ _No mentions this period._
   - tags: Other
 - [Eluviant Launches Next-Generation Generative AI Model for Enterprise Video Surveillance](https://www.sdmmag.com/articles/105610-eluviant-launches-next-generation-generative-ai-model-for-enterprise-video-surveillance) — SDM Magazine · 2026-07-14
   - tags: Product
-- [Security Industry Association Reveals the First Look at the SNG 2026 Agenda](https://www.sdmmag.com/articles/105609-security-industry-association-reveals-the-first-look-at-the-sng-2026-agenda) — SDM Magazine · 2026-07-14
-  - tags: Product
-- [Add Your Voice to CI+SSI’s Command-and-Control Survey](https://www.securitysales.com/news/command-control-survey-closes-july-24/619750/) — Security Sales & Integration · 2026-07-14
-  - tags: Business; Wireless & smart access
-- [Russian State-Backed Hackers Target Vulnerable Routers in Critical Infrastructure, Agencies Warn - Security Info Watch](https://news.google.com/rss/articles/CBMi7gFBVV95cUxQRWJWWm5zaFVEMHF6QUdaWVhhdGYwc3ZLSmtGdG5fNEhXZWNHVzRsa3lkQXpMU1pVZTRGaXlYbkt5NFhrUTc5dEtqQmE0U213dzhNaHBVNVFfRlppcV91Rkdxcl9waHBIb0oyTkFKbF9wcEFwRVVyR0JJLXlacjFqRnZjRkVzbVBBSGRtOGtSQkI1bWdITkk3YzRDNS1zQzdLZ05oWnF1YkVCQzQ3ZWpFcVJ1UVZGMHVzRnVJdnRhSTRuUHZwMEk5a3VWMzdTcWNPbHQ0TjRxVTBFMWJDZWFxaGlNVVJGWkU0VWxWbXJn?oc=5) — Security Info Watch · 2026-07-14
-  - tags: Other
-- [SIA Welcomes Randy Clark as New Director of Member Services](https://www.securitysales.com/news/sia-randy-clark-director-member-services/619740/) — Security Sales & Integration · 2026-07-14
-  - tags: Other; Wireless & smart access
-- [Michael Matta, CEO and Co-Founder, Solink: Best Advice](https://www.securitysales.com/insights/michael-matta-solink-best-security-advice/619733/) — Security Sales & Integration · 2026-07-14
-  - tags: Business; Wireless & smart access
-- [ProdataKey Launches Entrio Integration to Streamline Cloud-Based Visitor Access - Security Info Watch](https://news.google.com/rss/articles/CBMiuwJBVV95cUxQdFR5eHlVYUM4R0ZVOU9yaDUtN1QzUUJzemhyQ1JGcUJKU2lOUEttb3dETktNTmNtS2JDdllpTVJaWk1LVXpaME56UVotcUJGNEdnNGQtc2pOdGJiUmZ4d2RmZk9aUTdBSWp3b0k1cEI3RlJoZGhNWEhXRlJiMnREQTBYNnItRkRoTG5HV1JYZWJFelhaT25jRjVQamsxMGp0LTBndkU2bVdmMGxvYlduenZrVkl0ZFIyN3huZFo0ZmdYemxBTzEzSEdZc0V4NDk4d2NMbUFBVE44dkd1eGd2WnZFV0F0dGZ1RWszUXhtODRUSmktRWQyUjFJWmhtMk1manhscVp2RldWMEd5Zmt3cFV4N3JBQVRYVzBZV2ktZWc5UlZ6c3hUSUJnM3JqWDBuZXdXUkpXQlUwWDQ?oc=5) — Security Info Watch · 2026-07-14
-  - tags: Product; Wireless & smart access
-- [2 Reasons to Like ALLE and 1 to Stay Skeptical - StockStory](https://news.google.com/rss/articles/CBMiqgFBVV95cUxPVmFOa2ZDNUtvZk1aNEVSTGZTQUhabG1lNzB6bDNGYzhsTEI4RjR2X2lwSnk0Vmx6bksyVUtHRWpnQkZLaGpTRE1EaGRiRkRuMXh1ZWFjWk5aaEJ4YV9tbW5kbmIxZG04eDE2QTZlN1E4ODM4SjQ1ckhtN1dGYUd1Yl9tS1d6a1ZLVDFseEpGc2w2M1ZScDhnWGI1dDVIdDBkQWhBSEZHdnBPdw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-14
-  - tags: Other
-- [Sumitomo Mitsui Trust Group Inc. Lowers Stake in Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMixAFBVV95cUxQRG1TRXNjU2dlT2hLWFJsbWNhLVFCSm5FaFBHOGwxZUZoUUFwcE1HblpmRFh6akEwcFpjMnVhV0FZTmVPOU51TDZwcE9sQ216bmVQcjdXbThDM0hTeFhYWjhZZEEyVGY0bjE1THU5WERnSjZ6alhNb2RYRGNoamg0VTh6QW5iWUtvVzcwV3BJTk5EalVFYUl6X3FMUDJKR09DTy1sRW9XeWVweFhTZzE3R3Uzal9hMHBOTFR6OUhZWUFGS1ox?oc=5) — Von Duprin / Allegion news (Google News) · 2026-07-14
-  - tags: Allegion (Schlage / Von Duprin / LCN); Other
-- [SNR: Zeus Appoints New CEO & Acquires SEi, RapidFire Acquires Pro-Alarm](https://www.sdmmag.com/articles/105607-snr-zeus-appoints-new-ceo-and-acquires-sei-rapidfire-acquires-pro-alarm) — SDM Magazine · 2026-07-14
-  - tags: Business
-- [Galeria de Entrance Systems - Sliding Doors - 9 - ArchDaily](https://news.google.com/rss/articles/CBMioAFBVV95cUxNX2hOdGJvRHJQOG45SDBIdUluaVc2RlppMWFfQS1mUU0yZ21uOHVOWGVKU2N4MHVVOHJQMlhaYkRPeFVGNjdDdjFTbV9QR1BUMlp0UGNsMkJVOGxhelRkS25JTDlNazJkdDJCSFU0MVc2UjBPa0xaUm1NNHMyOXppbjRDUWFFb1pVSWExeGV4N1AzU0ZrT1FvbWlIemE0Y2tz?oc=5) — dormakaba news (Google News) · 2026-07-14
-  - tags: Other
