@@ -1,6 +1,6 @@
 # EMS VOC Radar — digest
 
-*Period: last 30 days, generated 2026-07-15 17:35 UTC*
+*Period: last 30 days, generated 2026-07-15 17:39 UTC*
 
 **217** items collected (+180 vs. prior 30 days): 0 Reddit discussions, 213 trade-press articles, 4 competitor page items.
 

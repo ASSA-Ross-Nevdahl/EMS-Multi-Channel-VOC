@@ -8,7 +8,7 @@ on:
     inputs:
       days:
         description: "Reporting window in days"
-        default: "7"
+        default: "30"
         required: false
 
 permissions:
@@ -44,7 +44,7 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: |
-          python -m voc run --days "${{ github.event.inputs.days || '7' }}" -v
+          python -m voc run --days "${{ github.event.inputs.days || '30' }}" -v
 
       - name: Commit data and reports
         run: |

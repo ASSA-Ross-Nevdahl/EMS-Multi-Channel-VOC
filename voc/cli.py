@@ -33,8 +33,8 @@ DEFAULT_OUT_DIR = Path(__file__).resolve().parent.parent / "reports"
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="voc", description=__doc__)
     parser.add_argument("command", choices=["collect", "analyze", "report", "run"])
-    parser.add_argument("--days", type=int, default=7,
-                        help="reporting window in days (default 7)")
+    parser.add_argument("--days", type=int, default=30,
+                        help="reporting window in days (default 30)")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG_DIR,
                         help="config directory containing sources.yaml/taxonomy.yaml")
     parser.add_argument("--db", type=Path, default=None, help="SQLite db path")

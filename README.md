@@ -97,8 +97,8 @@ exit-device or electric-strike news.
 ```bash
 pip install -r requirements.txt
 
-python -m voc run              # collect + tag + report (last 7 days)
-python -m voc run --days 30    # wider window
+python -m voc run              # collect + tag + report (last 30 days)
+python -m voc run --days 7     # narrower window
 python -m voc collect          # just fetch into data/voc.db
 python -m voc analyze          # re-tag everything (after taxonomy edits)
 python -m voc report --no-llm  # regenerate reports without the Claude brief
