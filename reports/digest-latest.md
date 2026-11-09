@@ -1,13 +1,18 @@
 # EMS VOC Radar — digest
 
-*Period: last 30 days, generated 2026-11-02 20:34 UTC*
+*Period: last 30 days, generated 2026-11-09 21:11 UTC*
 
-**400** items collected (+65 vs. prior 30 days): 0 Reddit discussions, 400 trade-press articles, 0 competitor page items.
+**380** items collected (+41 vs. prior 30 days): 0 Reddit discussions, 380 trade-press articles, 0 competitor page items.
 
-**News split:** 31 product-level (-7), 128 business-level (+31), 241 unclassified.
+**News split:** 25 product-level (-16), 129 business-level (+40), 226 unclassified.
 
 ## Product-level news (roadmap signal)
 
+- [PureTech Systems Unveils Enhanced PureActiv Integration With Genetec Security Center for Perimeter Protection](https://www.sdmmag.com/articles/105985-puretech-systems-unveils-enhanced-pureactiv-integration-with-genetec-security-center-for-perimeter-protection) — SDM Magazine · 2026-11-09
+- [SIA Releases Statement on Recent Anti-ALPR Demonstrations](https://www.sdmmag.com/articles/105982-sia-releases-statement-on-recent-anti-alpr-demonstrations) — SDM Magazine · 2026-11-09
+- [Security Industry Veteran Anthony Rumore Launches AegisLead to Help Security Companies Find Business & Manage Growth](https://www.sdmmag.com/articles/105980-security-industry-veteran-anthony-rumore-launches-aegislead-to-help-security-companies-find-business-and-manage-growth) — SDM Magazine · 2026-11-09
+- [VOSKER Launches VOSKER Enterprise to Bring Together Mobile Surveillance & Intelligent Intrusion Detection](https://www.sdmmag.com/articles/105977-vosker-launches-vosker-enterprise-to-bring-together-mobile-surveillance-and-intelligent-intrusion-detection) — SDM Magazine · 2026-11-08
+- [What to Expect from PDK at ISC East: Wireless Locks, High-Security Readers, New Features and More](https://www.securitysales.com/news/what-to-expect-pdk-isc-east-2026/621301/) — Security Sales & Integration · 2026-11-02
 - [Milestone Brings Greater Video Context & Simpler Management with XProtect 2026 R2 & Arcules](https://www.sdmmag.com/articles/105962-milestone-brings-greater-video-context-and-simpler-management-with-xprotect-2026-r2-and-arcules) — SDM Magazine · 2026-11-02
 - [Pimloc Introduces Redesigned Video Editor for Faster Video & Audio Redaction](https://www.sdmmag.com/articles/105957-pimloc-introduces-redesigned-video-editor-for-faster-video-and-audio-redaction) — SDM Magazine · 2026-10-29
 - [Antaira Launches LanoSync Q-Series Industrial Network Switches Combining Precision Timing & Reliability](https://www.sdmmag.com/articles/105955-antaira-launches-lanosync-q-series-industrial-network-switches-combining-precision-timing-and-reliability) — SDM Magazine · 2026-10-29
@@ -28,93 +33,87 @@
 - [Talkaphone Introduces EZinfo Conversational AI, Powered by Whoo](https://www.sdmmag.com/articles/105897-talkaphone-introduces-ezinfo-conversational-ai-powered-by-whoo) — SDM Magazine · 2026-10-12
 - [Teledyne FLIR OEM Launches Prism A-ISR](https://www.sdmmag.com/articles/105895-teledyne-flir-oem-launches-prism-a-isr) — SDM Magazine · 2026-10-12
 - [SDM Releases Mini Podcast Series ‘Beyond the Buzz’](https://www.sdmmag.com/articles/105893-sdm-releases-mini-podcast-series-beyond-the-buzz) — SDM Magazine · 2026-10-12
-- [Altronix Introduces Automatic DC Transfer Switch With Built-In Rapid Battery Charging](https://www.sdmmag.com/articles/105890-altronix-introduces-automatic-dc-transfer-switch-with-built-in-rapid-battery-charging) — SDM Magazine · 2026-10-10
-- [Acoem Introduces Individual Sensor Management to Support Site-Specific Environments for Acoustic Threat Detection](https://www.sdmmag.com/articles/105889-acoem-introduces-individual-sensor-management-to-support-site-specific-environments-for-acoustic-threat-detection) — SDM Magazine · 2026-10-10
-- [ABLOY CUMULUS Expands, Keyless Access Now Available for Doors](https://www.sdmmag.com/articles/105888-abloy-cumulus-expands-keyless-access-now-available-for-doors) — SDM Magazine · 2026-10-10
-- [U.S. Patent Validates Cozaint’s MARCIA Architecture for Intelligent Video Lifecycle Management](https://www.sdmmag.com/articles/105884-us-patent-validates-cozaints-marcia-architecture-for-intelligent-video-lifecycle-management) — SDM Magazine · 2026-10-08
-- [Watson Farley & Williams Goes Fully Mobile With SwiftConnect for Employee Access at New London HQ](https://www.sdmmag.com/articles/105880-watson-farley-and-williams-goes-fully-mobile-with-swiftconnect-for-employee-access-at-new-london-hq) — SDM Magazine · 2026-10-08 — _Controllers, readers & credentials_
 
 ## Business-level news (competitive context)
 
-- [VIRGINIA RETIREMENT SYSTEMS ET Al Acquires 23,900 Shares of Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMi0wFBVV95cUxNLTZMc2hGbTRGN2RPYnZzMFViZWQwQjI4R3hGOWZ4YWY0MVNKS2lna2VXeVZFcjhfRW1OVHV5YzVTOGR1TnhJVTRWMFh5TGRWT2J1X1JqOXQ1aTR4Z0IzZHFHQ3dUdTNTQi1PV0RXa2JsNW00Qlo3TVpiYVNyUjdpRll4ZEExUXNCaERrQVozRkd1bFEwRU9weXFyS29fVTBBNDJ3UU91ZlpIeWRHb0JtbWFWTmJXbUdNcVdRVDhsR3RpNXdibUdDMmhZUm9Rd3YyOGIw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02 — _Allegion (Schlage / Von Duprin / LCN)_
-- [How Raised Guidance At Allegion (ALLE) Has Changed Its Investment Story - Simply Wall St](https://news.google.com/rss/articles/CBMizwFBVV95cUxQd0w3SWU2eThTbE10c3JOVE15NGhPWHIxQWhPcHlhUHY0SFNZM2dXMDZnS1djSHQ2SkdMZFMyVlpia2pJTzZmYWU1RXdFUlNKdmpWVmk5bnF1V0R5YzE3bmRic1hubEFjalVhMFR0VzlyZGRXdHJudndMM2hlTmlSclg4eTUwSDVyUEV0ZF9tdWEzUEc5Mm9Rb1hocGtuTGx2ODRodDdGTkFBWG5yYk0tSmg4dnh2SS1IRE5vcml6cnRCZ2lfX2FNT3RpNkYwRkXSAc8BQVVfeXFMUHdMN0llNnk4U2xNdHNyTlRNeTRoT1hyMUFoT3B5YVB2NEhTWTNnVzA2Z0tXY0h0NkpHTGRTMlZaYmtqSU82ZmFlNUV3RVJTSnZqVlZpOW5xdVdEeWMxN25kYnNYbmxBY2pVYTBUdFc5cmRkV3RybnZ3TDNoZU5pUnJYOHk1MEg1clBFdGRfbXVhM1BHOTJvUW9YaHBrbkxsdjg0aHQ3Rk5BQVhucmJNLUpoOHZ4dkktSEROb3JpenJ0QmdpX19hTU90aTZGMEZF?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02 — _Allegion (Schlage / Von Duprin / LCN)_
-- [SIAC Feasibility Study Reinforces Value of Industry–Law Enforcement Partnership, Charts Path to Long-Term Sustainability](https://www.sdmmag.com/articles/105960-siac-feasibility-study-reinforces-value-of-industrylaw-enforcement-partnership-charts-path-to-long-term-sustainability) — SDM Magazine · 2026-11-02
-- [10,581 Shares in Allegion PLC $ALLE Acquired by Sowell Financial Services LLC - MarketBeat](https://news.google.com/rss/articles/CBMi0gFBVV95cUxOMFNQbnJfREFBTXBJVWxkeUJkanBpOWhmNzZZd1p1YzR0VVZieDE2V1VveG04cUtoLTlqMXpjdnM3Q25vdHJ1QkRZcUU2cjM4cU1Xc1dpc0owMlhvNE1zNWxqb2M5ZmVmS0hEaC1FS1g5YktleXlPVE9mMkNPdWQwTzdXc0ZrRTBXVEtHZ0NPa3ktb2wwYlRNVTYyTW85M0VvM3ZIbGhreWJteVBjRW1NdUg2RlZqblhEVjFJVUp0eF81RHBaYUV0dlk3V0pzWVNnaUE?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-01 — _Allegion (Schlage / Von Duprin / LCN)_
-- [866,131 Allegion PLC $ALLE Shares Purchased by International Assets Investment Management LLC - MarketBeat](https://news.google.com/rss/articles/CBMi5wFBVV95cUxQekw4WUVUc1BWNksyRXluajlhWUtRQ0RLRU9FTnk0cWg1YTNSQTkySzhiYnc0eUMtQUVBaWQ5MGk5RzlPZ1UyeXNNLVBKVFpZZ19KbTFDbTVsd19vTWEtSmM2WGFvWnRlRGRSY0REVmpJNWtsT1ZDdWhmUko4TjVCZnNaM2wzRng5NU1lT3E3OFl1emdsRGQ1OGRtSHlPX2w0UVFselktR0dhTnV3a3R1Mlh6eUk2OUwyenhkc0tBV3JVUjNiMDB1V3FGbW9zQXZlT3ctVGtoN1FuYVVVNkdXTDFrUnhXa28?oc=5) — Von Duprin / Allegion news (Google News) · 2026-10-31 — _Allegion (Schlage / Von Duprin / LCN)_
-- [ADT to be Acquired by Thrive Holdings in $15.3B Transaction](https://www.sdmmag.com/articles/105954-adt-to-be-acquired-by-thrive-holdings-in-153b-transaction) — SDM Magazine · 2026-10-29
-- [Wachter Opens Logistics & Training Center at Lowell Campus to Strengthen Nationwide Deployment & Technician Training](https://www.sdmmag.com/articles/105953-wachter-opens-logistics-and-training-center-at-lowell-campus-to-strengthen-nationwide-deployment-and-technician-training) — SDM Magazine · 2026-10-29
-- [Immix Adds Melissa Rojo as Vice President of Product Transformation](https://www.sdmmag.com/articles/105952-immix-adds-melissa-rojo-as-vice-president-of-product-transformation) — SDM Magazine · 2026-10-29
-- [Allegion Ventures Makes Second Strategic Investment in Ambient.ai - Security Info Watch](https://news.google.com/rss/articles/CBMiwgFBVV95cUxQR2YxNXZrNE90YW8xa0lGZVdYWkRpNzZhbjBjZml1OHJWYjlGTVdkd2hKNk1aN0NkZWxocTVoWUFDWHYyUWctRUZnZXN4M3ZONVV3T1YyNW5xb3dSUEZ5MUt3X2lMQkE1VXdqR1dzcTl0UnJ2WmhSTl9UQ055Zm9DbGxTSll3V0E4QXdubDlhdjZtWk04R0FiVE9yZEVCNGhBU2JkQ2tPajdIMGVCeUhRM2hMWm9QbzBldS1DUXF3cUVFQQ?oc=5) — Von Duprin / Allegion news (Google News) · 2026-10-28 — _Allegion (Schlage / Von Duprin / LCN)_
-- [Garrett Motion (GTX) reports Q3: everything you need to know ahead of earnings - TradingView](https://news.google.com/rss/articles/CBMi0gFBVV95cUxPQWhWNDlXcm5qNmEwRzNqTW9wUmhVcEZKd2p6Y00wOGVPYWt4X3liOENfYVVjSTNfNVMyazFyQ29mRjZrZVlESlgwVGZ6U0NZc05iaHB4ZHc1bnpBWGlkMjU2d21hbTRGNzJBN054RnNNcVVhODhkU2xxal96QXFjV0d2NEdxR2dSWHI3Q2gxUkxYRzJOc1czYWI1ZlgxNUpIRTRYaGs3Z0ZLSktETXk4dHFqdDNwczRSNll2RnNjNi1iWWU1V0tERTBIODg2Wjd1dHc?oc=5) — Von Duprin / Allegion news (Google News) · 2026-10-28
-- [Totem Partners With Milestone to Extend the Power of Video Management into 24/7 Monitoring Operations](https://www.sdmmag.com/articles/105949-totem-partners-with-milestone-to-extend-the-power-of-video-management-into-24-7-monitoring-operations) — SDM Magazine · 2026-10-28
-- [Truelink Capital Signs Definitive Agreement to Acquire Johnson Controls’ Global Intrusion Products Business](https://www.sdmmag.com/articles/105940-truelink-capital-signs-definitive-agreement-to-acquire-johnson-controls-global-intrusion-products-business) — SDM Magazine · 2026-10-27
-- [Ryan Burns Wins 2026 Jay Hauhn Excellence in Partnerships Award](https://www.securitysales.com/news/sia-ryan-burns-2026-jay-hauhn-excellence-in-partnerships-award/621180/) — Security Sales & Integration · 2026-10-26
-- [Weekly Recap: Allegion (ALLE) Q3 results and Overly Door acquisition - TradingView](https://news.google.com/rss/articles/CBMixgFBVV95cUxOODlrUjRrUW5sdHhGdDdiREVoeUkwNHY4bU13RmgxVVFVdDdzbG5MX2NrWnhfWmtWYzFWdkRrVGxIc0JsSkwwX2hOLWR2XzRNcU85ZmRMVlFqOFd4Rzl5azVlRjdISzhycUVXeHVWbFViRkd5RGdkQVh0WWhEMDVaWV9vc1JpNkdnYmctdk94cWpuOE9fejY5Q1VaUDZIOW1EVE1lazV0S1c0ZkVjRUZ0Yjd0SmlsOURoeXR6d0d6M3hvWHk4anc?oc=5) — Von Duprin / Allegion news (Google News) · 2026-10-26 — _Allegion (Schlage / Von Duprin / LCN)_
-- [Corning (GLW) Q3 earnings: what to expect - TradingView](https://news.google.com/rss/articles/CBMioAFBVV95cUxPam9DOGNvZVI2aGtDNEtmM1dYYUx0OEtTT01WWmdZb3RPZWdFNzdiLVRWbUxsZnNXb25FaGYwU2lqTzMwdFZJQjIydXRXV1RsY2E0dnloZWUtY09rSHljMEZvdlk2cjhpMnhsVHZvRVctXzhDQWw4cXNTTGwyTU5UNldsS2RpSWdPZ0dhSlItNnJaUEJLSS1iWnB3SGNla3hR?oc=5) — Von Duprin / Allegion news (Google News) · 2026-10-26
+- [Alarm.com Reports 9% Revenue Growth, Acquires CellGate - Security Info Watch](https://news.google.com/rss/articles/CBMixAFBVV95cUxQQXMzMDlITUxhVlJ0dEdXX3U5dWNEMElaWjZoQ3VqQkNSRjM4aENtZmtTWVdmTllDaGRwMWF3Z1Q2VFF3NWlpeWRuMF9jbm1QalpobkRXZmJqV3ZtTjZBbHJGc251c254YS05dHNmbWNMZ2Ewak5MNjdPejIzbktrbnRYWEJvbGV0RElwc0FPQ19ubmN6UW82Z25VcC05RHBPb0RGOXdyRTNqWU40ekUyNldQcGJDT0hXRXJ0WGZ4ZGNjOVlf?oc=5) — Security Info Watch · 2026-11-09
+- [Allegion PLC $ALLE Stock Position Boosted by International Assets Investment Management LLC - MarketBeat](https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRjZyRGY3cXRqM1Rlc1gwbDNESVRuT2x1SC1YM0ZvTXZ4elEwaV9sbFJyVU9SaHhUU1lhYXFhTWRTMmhTbHc3c1A4eEw5UEpDc0FHZmMwRTU4Q2xUdTFITWJjakxIX25LSm9zekpFWjI2WlhkRGFaMTVRSldTYkZoWE9CdjRyRER3bkZfSGJWY3pkZFVWdXZFZVFBNl9TaFNqX1R3YU1Ud2F6cHRuR3lFOURpT3oxRF9UT3lkdGNSdXBjdXZibkl5VHB0aHJ1QURpek1WcWtwQldxOWhva3ZYSld2MlhIUQ?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09 — _Allegion (Schlage / Von Duprin / LCN)_
+- [Allegion PLC $ALLE Stock: Chicago Partners Investment Group LLC Increases Holdings - MarketBeat](https://news.google.com/rss/articles/CBMi2AFBVV95cUxNWWd4UUtobEV4UUNhR3hGdmN3TFc3WXQzTjZxRDQzZmdVZlV6ZUI2VmUyWjJZYzJaUE0tc3FmMHdBUm1NNk5MSUJaeEYwRXUwVFFKMWEtdXMwWUlOX05XS1RjNnBTSnFZWGRZdFV6U3BZOTJQNlBWZzVudHhGYWxJLWlkQ3VYY3dQN2hNT2dTRzVIZ3lUdzVoUUlFeUh4YkE2dTRIdXBKNFFPZzRnaEVFbHc4QXBWaVFtWnZwTWtqS3l4cmtvamdWRVl6eldIWjJqb29PQmhYX3Y?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09 — _Allegion (Schlage / Von Duprin / LCN)_
+- [Commonwealth Equity Services LLC Buys 246,004 Shares of Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMizgFBVV95cUxPZENEVldKUHFFTFdwaGE1aUw3OFBKcXA1Yzh3VGZFc0tmUnlWY2tOQTdpZEtOWng0cnlia25NU3BPSHNOYm54U21vaHRwN28wM0pXQmpDaVYyNktTN3BkZkZYSW80SDFfNkV1SXp2Sm04dnc2M1E4THNFajJCejNiR3JxVzBVdGNWb25RNHZZNHhaa1J6aHZHN3FSaUtpcjB5S0FPLVkyMGNnTjBvblQ3dnowVndNQl95dXRQZVVuc2szZVZNOXBnbkxDTl9Ddw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09 — _Allegion (Schlage / Von Duprin / LCN)_
+- [FSN Capital VI to Acquire Zenitel](https://www.sdmmag.com/articles/105979-fsn-capital-vi-to-acquire-zenitel) — SDM Magazine · 2026-11-09
+- [Axon Invests $1.2B in Skydio to Build the Future of Drone as First Responder](https://www.sdmmag.com/articles/105978-axon-invests-12b-in-skydio-to-build-the-future-of-drone-as-first-responder) — SDM Magazine · 2026-11-09
+- [Mirae Asset Global Investments Co. Ltd. Acquires 21,656 Shares of Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMi2AFBVV95cUxOTVBtMVpFZXRVSHI2Qng0X1VRdzhycXNzanhxYXhhcjN5c0FWRElPOE45ZF9IZXBZTXJyTk5UU2ktc2NuWFV4ZFZvRXBGZmhXaUlfNlItY2tudDNSZ3pMbGRnRXJ3aENTRW44cEVsWkNGNjlnNExCdWRiM0JjcW1qMERNenRlcy1fSXNNMVM4RlZwS1d0eEFZN3hkT1JWanRXRGJaUkZIMjlDN2QzTDFCdDBkVFp3Ym40Rmo2ZFc4UGZvYVNRaW5ueGdkX2d6cHJ3bUdOeTVJTHI?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-07 — _Allegion (Schlage / Von Duprin / LCN)_
+- [Guardian Alarm Builds on Memphis Presence With Acquisition of Protection Unlimited](https://www.sdmmag.com/articles/105974-guardian-alarm-builds-on-memphis-presence-with-acquisition-of-protection-unlimited) — SDM Magazine · 2026-11-06
+- [Pye-Barker Acquires St. John’s Fire Equipment of St. Augustine, Florida](https://www.securitysales.com/news/pye-barker-acquires-st-johns-fire-equipment/621385/) — Security Sales & Integration · 2026-11-05
+- [Pye-Barker Fire & Safety Acquires St. John’s Fire Equipment Inc. to Strengthen Fire Suppression Services in Florida](https://www.sdmmag.com/articles/105973-pye-barker-fire-and-safety-acquires-st-johns-fire-equipment-inc-to-strengthen-fire-suppression-services-in-florida) — SDM Magazine · 2026-11-05
+- [PSA Network Partners With Community College of Denver](https://www.securitysales.com/news/psa-network-partners-community-college-denver/621351/) — Security Sales & Integration · 2026-11-04
+- [SIA Reveals 2026 Women in Security Forum Scholarship Winners](https://www.securitysales.com/news/sia-2026-women-in-security-forum-wisf-scholarship-winners/621345/) — Security Sales & Integration · 2026-11-04
+- [PSA Network Partners With Community College of Denver](https://www.sdmmag.com/articles/105971-psa-network-partners-with-community-college-of-denver) — SDM Magazine · 2026-11-04
+- [HID Acquisition of inepro ID Expands Company’s Secure Print Portfolio](https://www.securitysales.com/news/hid-acquisition-of-inepro-id-expands-companys-secure-print-portfolio/621334/) — Security Sales & Integration · 2026-11-03
+- [Security Industry Association Announces 2026 SIA Women in Security Forum Scholarship Winners](https://www.sdmmag.com/articles/105969-security-industry-association-announces-2026-sia-women-in-security-forum-scholarship-winners) — SDM Magazine · 2026-11-03
 
 ## Mentions by product category
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Controllers, readers & credentials | 6 | -2 |
+| Controllers, readers & credentials | 5 | -4 |
 | Magnetic locks | 1 | +1 |
 | Exit devices & panic hardware | 1 | +1 |
-| Electric strikes | 1 | 0 |
 
 ## Own-brand mentions (HES / Securitron / Alarm Controls / Adams Rite / Control iD / LifeSafety Power)
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| HES | 3 | +3 |
+| Securitron | 1 | +1 |
 
 ## Competitor mentions
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Allegion (Schlage / Von Duprin / LCN) | 201 | +113 |
-| dormakaba / RCI / BEST | 21 | -40 |
-| Alarm Lock / Napco | 2 | 0 |
+| Allegion (Schlage / Von Duprin / LCN) | 179 | +82 |
+| dormakaba / RCI / BEST | 15 | -41 |
+| Alarm Lock / Napco | 4 | +4 |
 
 ## Themes
 
 | | mentions | vs. prior |
 |---|---:|---:|
-| Wireless & smart access | 59 | +1 |
-| Pricing & availability | 16 | +10 |
+| Wireless & smart access | 68 | +17 |
+| Pricing & availability | 13 | +4 |
+| Installation & troubleshooting | 7 | +3 |
 | Reliability & quality | 6 | +3 |
-| Codes & life safety | 5 | +3 |
-| Installation & troubleshooting | 4 | -2 |
-| Compatibility & retrofit | 3 | +2 |
+| Compatibility & retrofit | 4 | +3 |
+| Codes & life safety | 4 | +1 |
 
 ## Notable items
 
-- [Installing the Marks USA Interconnected Smart Deadbolt - Locksmith Ledger](https://news.google.com/rss/articles/CBMiwgFBVV95cUxOT01iT2sydzJNZGFiZU5LZ253azNJMkJSS0thS3Izb0RRMV9IQW5vM2g0bmQxdEFqN3o0QUVCT1ViYmVyX0lPZTVEQVFxU2gyZDVtTDdodHZqV2JzN09XTUMyNmh5ckYzY0c0N1M5Qlk2R1dDWkU5R2QySGRnMHFNZnNOLU9WOGwtTzczaU8xMlBQMjRTTUJsdjB5aUhVZ0Z4U3FYTG9fazh6d054Y1Bwc0MxVFFVRVktYXVwS2paUTRGUQ?oc=5) — Locksmith Ledger · 2026-11-02
-  - tags: Other; Installation & troubleshooting
-- [Locksmith Ledger Trusted Tool Review: Schlage Performance Series™ PM Mortise Lock Installation with Wayne Winton - Locksmith Ledger](https://news.google.com/rss/articles/CBMi7AFBVV95cUxNeE8tSW9Sd05MYXpTX3NleERjdXNRaXoxcExoTE94aTFnZGg1LTJkX1o1M0p4NXpIZ1F2bWZ3c1F1VVN5QjN1NkpENHN0UF9qVE5ST2lHbF9XaWhkRmY2U2ZXTURaMlF4WTI0TWc0b0xQeXJmaEFKLXlvdWk4dTRqZ1gwcURHYjZnYTlTeXlUd1lQMkJ3TWp2dXhGSHFkYWhxc2hYdDk4bVN0ZENXZG1ncFFzRzBmQThiU2wtb2dWeWVsOWtDM0hRUTdBUnBaajRFaXVGcEJKNzhhTVFCa0RUZko5blBYQUVPVDNBOQ?oc=5) — Locksmith Ledger · 2026-11-02
-  - tags: Allegion (Schlage / Von Duprin / LCN); Other; Installation & troubleshooting
-- [dormakaba closes Alliants deal, bringing integrated hotel technology to The Hospitality Show 2026 - Hospitality Net](https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaTQ5bmh2ZHJWQVlyeVpRNENTTFJrVWZiOWJzcmJNbDJNbElpQUpJcGI5SlVmbU9pWk1wUDJzRjNUU0hrS3BkdXQzeTNCRHJyMVVRczNWNFp0eWxadkxDcGtwUi0walM1bGFGTk0xTC1OeFR2eXp4aUFzclhuc3hlRHZZV3hNY0dIY1h2Sy1mMGJtWW9PLVFPNjBoQjhKZ1Z4Sm9jMkYyMm5idE5LSlJoVmZvOUtpbDhXZE5mY1FibDUyZGd1UTRCLW5FWElHYlp6NmZhNG5qMA?oc=5) — dormakaba news (Google News) · 2026-11-02
-  - tags: dormakaba / RCI / BEST; Other
-- [Allegion Optimize Simplifies Auto Operator Calibration - Security Informed](https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQUhOcEhHcEdiaEd0VTREWU16R0JkR1Y3VVN6SklPaUxuYzNTY2NOeEpnbHM2dktRaExFQlNsQk9qQUNnWnJXT0hKVWFZaHVUNzJRM1Nqa0FoUnpCUkpTV3dJYmUxZ2ZpREc0TWxiajZMdzNLQ3BaY2ZkZjdldXpObUtRMkFYc3RJY2VhQnBNOGp6MkU0NXhKTU02WWN2cUZkNW9vSFdCOHQ2cWZ6QjZwb25pQTZmd01K?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02
-  - tags: Allegion (Schlage / Von Duprin / LCN); Other
-- [Contract Or Tort & The Lost Contract](https://www.sdmmag.com/articles/105964-contract-or-tort-and-the-lost-contract) — SDM Magazine · 2026-11-02
+- [Alarm.com Reports 9% Revenue Growth, Acquires CellGate - Security Info Watch](https://news.google.com/rss/articles/CBMixAFBVV95cUxQQXMzMDlITUxhVlJ0dEdXX3U5dWNEMElaWjZoQ3VqQkNSRjM4aENtZmtTWVdmTllDaGRwMWF3Z1Q2VFF3NWlpeWRuMF9jbm1QalpobkRXZmJqV3ZtTjZBbHJGc251c254YS05dHNmbWNMZ2Ewak5MNjdPejIzbktrbnRYWEJvbGV0RElwc0FPQ19ubmN6UW82Z25VcC05RHBPb0RGOXdyRTNqWU40ekUyNldQcGJDT0hXRXJ0WGZ4ZGNjOVlf?oc=5) — Security Info Watch · 2026-11-09
+  - tags: Business
+- [JustDo Brings AI Operations Agent to Simpro, BigChange & AroFlo](https://www.sdmmag.com/articles/105986-justdo-brings-ai-operations-agent-to-simpro-bigchange-and-aroflo) — SDM Magazine · 2026-11-09
   - tags: Other
-- [Allegion Optimize App streamlines device management - SourceSecurity.com](https://news.google.com/rss/articles/CBMitgFBVV95cUxONWUtR081OG5VZE83RmJsaUdMeGNnRnQzWDMtMWZVY01hdG5JZGN4ck1hbEd4WFBKMW1pNnBCQlpGeGo4enhSV3FnalROMEVrQndpV293RExSM09kMXpnVnRsNXB3LUxXR3NYOXRTRzdfWEpCekg5VHFnSHJKMlFMSGU3bnBDSFN2aWZSSzZYXzhFclFCNjJCYk1lN1JBNEc4amFLYnBXVjRGcmRMUGlCVG9Pb19tZw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02
-  - tags: Allegion (Schlage / Von Duprin / LCN); Other; Wireless & smart access
-- [Allegion campus-to-community student living solutions - SourceSecurity.com](https://news.google.com/rss/articles/CBMitAFBVV95cUxOYzM4bVhxRjM0X1NaMDdkZDRsQWhVdFpjVU1wMDVDV1ZPSi1UTkdkY3FVZ1ZwdXZOWUZFUkIydHg1Z3ZlLXdnNnRwZnNNMjMtXzZ4NVR6bTF0ZzFMTGpXY1N2RFFkREYzeF9Ib0wtUkpQUl9OUkRVMGN4bUtUVTQxR2RfN0w0amJxRlkzNDB3N05aaF9tRy1zSnUzZEEzRHpYUzlSMnFEdHE0d3d3cmhKRng1N28?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02
-  - tags: Allegion (Schlage / Von Duprin / LCN); Other
-- [VIRGINIA RETIREMENT SYSTEMS ET Al Acquires 23,900 Shares of Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMi0wFBVV95cUxNLTZMc2hGbTRGN2RPYnZzMFViZWQwQjI4R3hGOWZ4YWY0MVNKS2lna2VXeVZFcjhfRW1OVHV5YzVTOGR1TnhJVTRWMFh5TGRWT2J1X1JqOXQ1aTR4Z0IzZHFHQ3dUdTNTQi1PV0RXa2JsNW00Qlo3TVpiYVNyUjdpRll4ZEExUXNCaERrQVozRkd1bFEwRU9weXFyS29fVTBBNDJ3UU91ZlpIeWRHb0JtbWFWTmJXbUdNcVdRVDhsR3RpNXdibUdDMmhZUm9Rd3YyOGIw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-02
-  - tags: Allegion (Schlage / Von Duprin / LCN); Business
-- [Newark Central School District Streamlines Security Operations with Genetec Security Center](https://www.sdmmag.com/articles/105963-newark-central-school-district-streamlines-security-operations-with-genetec-security-center) — SDM Magazine · 2026-11-02
-  - tags: Other
-- [Milestone Brings Greater Video Context & Simpler Management with XProtect 2026 R2 & Arcules](https://www.sdmmag.com/articles/105962-milestone-brings-greater-video-context-and-simpler-management-with-xprotect-2026-r2-and-arcules) — SDM Magazine · 2026-11-02
+- [NAPCO Opens NapcONE Showroom at New York Headquarters - Security Info Watch](https://news.google.com/rss/articles/CBMi8gFBVV95cUxNVC01bU9QQjU1SjZSR2daWUtLNFR3dEpBaEo1a1VxU05lMG0tYXVJcEJjYTBKV1hneHZOLTNZcDE1LWJuWWdYWXY5eDV2d3g0Uy1ZTE5pZmZ5UTZvY2xGOHo4dkUta2VuaUpfNDZFM1hMQmhfT21BLUlKTkZVUmQ1MFdaZHVtZ3RVYUxKX1lBc2ozRktUX3Y5YXN2dUVGdHJkMkJzREZVczllNzVDc3VCX3lyel8tYUhwZ29oVy1XR1dtYmlBeF8yX3RIaGY2LU0yeUNrMnY3N2xjVS1feUFJZFBxcGZ2NEdDeGZ1bmpVc2tDZw?oc=5) — Security Info Watch · 2026-11-09
+  - tags: Alarm Lock / Napco; Other
+- [PureTech Systems Unveils Enhanced PureActiv Integration With Genetec Security Center for Perimeter Protection](https://www.sdmmag.com/articles/105985-puretech-systems-unveils-enhanced-pureactiv-integration-with-genetec-security-center-for-perimeter-protection) — SDM Magazine · 2026-11-09
   - tags: Product; Wireless & smart access
-- [Matrix & Veracity Integrate Video Surveillance With VIEWSCAPE Command & Control Platform](https://www.sdmmag.com/articles/105961-matrix-and-veracity-integrate-video-surveillance-with-viewscape-command-and-control-platform) — SDM Magazine · 2026-11-02
-  - tags: Other; Wireless & smart access
-- [One million at risk as final deadline set for landline switch off - Cambridge News](https://news.google.com/rss/articles/CBMilwFBVV95cUxQX1phY1hoMWxZczRDVjR6bExEZXZyWS1YaTJMdmFJdVpYYW5QTVJCMklfUkx6VzFSLUZWMnJpTjh0Q05Fb3huZDVCYnYwYktnNFgxbHNUbFBzc1plVUlwbXp3NlQtN1ZhWDVWNUJWY3hLaFpxVGtOVXhJVUQtNlZpSUM2N0tmclM2bFk5TlV1MFltUVdSZG1J?oc=5) — Alarm Controls news (Google News) · 2026-11-02
+- [Connect ONE Adds LoRaWAN Wireless Sensor Integration to Enable Dealers to Retain a Key National Account](https://www.sdmmag.com/articles/105984-connect-one-adds-lorawan-wireless-sensor-integration-to-enable-dealers-to-retain-a-key-national-account) — SDM Magazine · 2026-11-09
+  - tags: Other; Installation & troubleshooting, Wireless & smart access
+- [The Last Word With… Devin Love, Allegion - Security Journal Americas](https://news.google.com/rss/articles/CBMigAFBVV95cUxNbk5kYnhNUHlySE1SdmtXR3FqRXRFVy1zUGppZkJXM001dkpXWU9kX3lOZG5NVTVBOFlkaGJZak5SZF9SWXN1RWtjU2hfNExMY1YyZVRvTG02LVYyTVhXaFNuV2Izb0Y3YUJvZ3dVbGgtWXhJOHpoRzJrNXNMMUtUeA?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09
+  - tags: Allegion (Schlage / Von Duprin / LCN); Other
+- [NAPCO Celebrates Grand Opening of NapcONE Showroom at New York Headquarters](https://www.sdmmag.com/articles/105983-napco-celebrates-grand-opening-of-napcone-showroom-at-new-york-headquarters) — SDM Magazine · 2026-11-09
+  - tags: Alarm Lock / Napco; Other
+- [SIA Releases Statement on Recent Anti-ALPR Demonstrations](https://www.sdmmag.com/articles/105982-sia-releases-statement-on-recent-anti-alpr-demonstrations) — SDM Magazine · 2026-11-09
+  - tags: Product
+- [YouTooz to release plush versions of the Deathclaw, Radscorpion, and Securitron from the Fallout series - iXBT.games](https://news.google.com/rss/articles/CBMi2AFBVV95cUxQamJfN0ZZeVZvWjhXV0tBbmJ1TlAycWVWdlRPYi1ZclNHYVNrZ09IQS01OVlnOWJTelNMX1dGZjRiQU1yQ2J2NnF6VFVlZVU2SlZFZU1ocGREWk9pRU5JYktFNVV6LUFfYkNWYUd6YVJ4M1RHZHAwOHZ5VXFqTnZWdVpHek5NWlJVQzU3RTlrWUNhMkdadEZxU3JxRjhPeTJLakgwNTZIc2V0aHFUM1RWYkFwWXZnNlVuOWpBQkN4UFJ0SEowQ2QwRTB4NGRWTXRDWDl3VnFnbHfSAdgBQVVfeXFMUGpiXzdGWXlWb1o4V1dLQW5idU5QMnFlVnZUT2ItWXJTR2FTa2dPSEEtNTlZZzliU3pTTF9XRmY0YkFNckNidjZxelRVZWVVNkpWRWVNaHBkRFpPaUVOSWJLRTVVei1BX2JDVmFHemFSeDNUR2RwMDh2eVVxak52VnVaR3pOTVpSVUM1N0U5a1lDYTJHWnRGcVNycUY4T3kyS2pIMDU2SHNldGhxVDNUVmJBcFl2ZzZVbjlqQUJDeFBSdEhKMENkMEUweDRkVk10Q1g5d1ZxZ2x3?oc=5) — Securitron news (Google News) · 2026-11-09
+  - tags: Other; Securitron
+- [Allegion PLC $ALLE Stock Position Boosted by International Assets Investment Management LLC - MarketBeat](https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRjZyRGY3cXRqM1Rlc1gwbDNESVRuT2x1SC1YM0ZvTXZ4elEwaV9sbFJyVU9SaHhUU1lhYXFhTWRTMmhTbHc3c1A4eEw5UEpDc0FHZmMwRTU4Q2xUdTFITWJjakxIX25LSm9zekpFWjI2WlhkRGFaMTVRSldTYkZoWE9CdjRyRER3bkZfSGJWY3pkZFVWdXZFZVFBNl9TaFNqX1R3YU1Ud2F6cHRuR3lFOURpT3oxRF9UT3lkdGNSdXBjdXZibkl5VHB0aHJ1QURpek1WcWtwQldxOWhva3ZYSld2MlhIUQ?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09
+  - tags: Allegion (Schlage / Von Duprin / LCN); Business
+- [45,062 Allegion PLC $ALLE Shares Purchased by Ethic Inc. - MarketBeat](https://news.google.com/rss/articles/CBMitAFBVV95cUxQNUNEbFZFWDZ5eGZRaWFIXzhXRTRHRWNRRl9ZMmFLcHZSUkdGSm5fQ3lXd1hBeWlBTEQxM3RTNWtoUHpuWEw0U2xCYkw1elI0bkNfRWxuMFhBOXZ2UDQyVkNlUDQ3bUtSOXVpNmlhWllUZVBuZHNQMFJ4ZkxwdWRyaEk2VU81cUU1YzU1SG1MODhiQjFILUpOY1d2eU53UFA0NkV4VjJrWm41WTRxb083TmE0d3c?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09
+  - tags: Allegion (Schlage / Von Duprin / LCN); Other
+- [Allegion PLC $ALLE Stock: Chicago Partners Investment Group LLC Increases Holdings - MarketBeat](https://news.google.com/rss/articles/CBMi2AFBVV95cUxNWWd4UUtobEV4UUNhR3hGdmN3TFc3WXQzTjZxRDQzZmdVZlV6ZUI2VmUyWjJZYzJaUE0tc3FmMHdBUm1NNk5MSUJaeEYwRXUwVFFKMWEtdXMwWUlOX05XS1RjNnBTSnFZWGRZdFV6U3BZOTJQNlBWZzVudHhGYWxJLWlkQ3VYY3dQN2hNT2dTRzVIZ3lUdzVoUUlFeUh4YkE2dTRIdXBKNFFPZzRnaEVFbHc4QXBWaVFtWnZwTWtqS3l4cmtvamdWRVl6eldIWjJqb29PQmhYX3Y?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09
+  - tags: Allegion (Schlage / Von Duprin / LCN); Business
+- [Commonwealth Equity Services LLC Buys 246,004 Shares of Allegion PLC $ALLE - MarketBeat](https://news.google.com/rss/articles/CBMizgFBVV95cUxPZENEVldKUHFFTFdwaGE1aUw3OFBKcXA1Yzh3VGZFc0tmUnlWY2tOQTdpZEtOWng0cnlia25NU3BPSHNOYm54U21vaHRwN28wM0pXQmpDaVYyNktTN3BkZkZYSW80SDFfNkV1SXp2Sm04dnc2M1E4THNFajJCejNiR3JxVzBVdGNWb25RNHZZNHhaa1J6aHZHN3FSaUtpcjB5S0FPLVkyMGNnTjBvblQ3dnowVndNQl95dXRQZVVuc2szZVZNOXBnbkxDTl9Ddw?oc=5) — Von Duprin / Allegion news (Google News) · 2026-11-09
+  - tags: Allegion (Schlage / Von Duprin / LCN); Business
+- [Viking MPS-XP Delivers Smarter Paging, More Zones & Complete Control](https://www.sdmmag.com/articles/105981-viking-mps-xp-delivers-smarter-paging-more-zones-and-complete-control) — SDM Magazine · 2026-11-09
   - tags: Other
-- [Beyond the Buzz: AI’s Role in Security](https://www.sdmmag.com/articles/105942-beyond-the-buzz-ais-role-in-security) — SDM Magazine · 2026-11-02
-  - tags: Other
-- [AI Growing Pains](https://www.sdmmag.com/articles/105941-ai-growing-pains) — SDM Magazine · 2026-11-02
-  - tags: Other
-- [Q&A: Vetting & Using AI Responsibly](https://www.sdmmag.com/articles/105894-q-and-a-vetting-and-using-ai-responsibly) — SDM Magazine · 2026-11-02
-  - tags: Other
+- [Security Industry Veteran Anthony Rumore Launches AegisLead to Help Security Companies Find Business & Manage Growth](https://www.sdmmag.com/articles/105980-security-industry-veteran-anthony-rumore-launches-aegislead-to-help-security-companies-find-business-and-manage-growth) — SDM Magazine · 2026-11-09
+  - tags: Product
